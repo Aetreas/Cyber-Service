@@ -29,7 +29,7 @@ public class UIObjectTest : MonoBehaviour
      //   {
       //      uiInput = false;
       //  }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             uiInput = false;
         }
