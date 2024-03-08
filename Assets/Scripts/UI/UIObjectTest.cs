@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIObjectTest : MonoBehaviour
 {
     public GameObject dialogBox;
+    public GameObject InteractBox;
     public bool uiInput = false;
     
 
@@ -24,23 +25,40 @@ public class UIObjectTest : MonoBehaviour
             uiInput = true;
         }
 
-        if (Input.GetButtonUp("Interact"))
+     //   if (Input.GetButtonUp("Interact"))
+     //   {
+      //      uiInput = false;
+      //  }
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             uiInput = false;
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        InteractBox.SetActive(true);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        InteractBox.SetActive(false);
+    }
     private void OnTriggerStay(Collider other)
     {
         if(uiInput == true)
         {
             OpenMenu();
+            InteractBox.SetActive(false);
         }
-    
-        //Debug.Log ("Player is in the collider.");
-    }
+        if (uiInput == false)
+        {
+            CloseMenu();
+            InteractBox.SetActive(true);
+        }
+            //Debug.Log ("Player is in the collider.");
+        }
 
-    public void OpenMenu()
+        public void OpenMenu()
     {
         dialogBox.SetActive(true);
         
