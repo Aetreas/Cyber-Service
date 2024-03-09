@@ -10,8 +10,9 @@ public class CurrencyBehavior : MonoBehaviour
     public Text fixText;
     public Text scrapText;
 
-    int fixcurrency = 0;
-    int scrapcurrency = 0;
+   public int fixcurrency = 0;
+   public int scrapcurrency = 0;
+   [SerializeField] private int itemPrice;
 
     private void Awake()
     {
@@ -32,5 +33,14 @@ public class CurrencyBehavior : MonoBehaviour
     {
         scrapcurrency += 50;
         scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+    }
+
+    public void Buy()
+    {
+        if (scrapcurrency >= itemPrice)
+        {
+            scrapcurrency -= itemPrice;
+            scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+        }
     }
 }
