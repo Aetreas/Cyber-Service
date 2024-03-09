@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    public static ThirdPersonMovement Instance;
+
     public CharacterController controller;
     public Transform cam;
 
@@ -16,7 +19,10 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothVelocity;
 
 
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -62,5 +68,13 @@ public class ThirdPersonMovement : MonoBehaviour
 
     }
 
+    public void FreezePlayer()
+    {
+        speed = 0f;
+   }
+   public void UnFreezePlayer()
+    {
+        speed = 6f;
+    }
 }
 

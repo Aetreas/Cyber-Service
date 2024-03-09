@@ -20,10 +20,10 @@ public class UIObjectTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Interact"))
-        {
-            uiInput = true;
-        }
+        //if(Input.GetButtonDown("Interact"))
+      //  {
+        //    uiInput = true;
+       // }
 
      //   if (Input.GetButtonUp("Interact"))
      //   {
@@ -45,7 +45,11 @@ public class UIObjectTest : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(uiInput == true)
+        if (Input.GetButtonDown("Interact"))
+        {
+            uiInput = true;
+        }
+        if (uiInput == true)
         {
             OpenMenu();
             InteractBox.SetActive(false);
@@ -61,12 +65,12 @@ public class UIObjectTest : MonoBehaviour
         public void OpenMenu()
     {
         dialogBox.SetActive(true);
-        
+        ThirdPersonMovement.Instance.FreezePlayer();
     }
 
     public void CloseMenu()
     {
         dialogBox.SetActive(false);
-        
+        ThirdPersonMovement.Instance.UnFreezePlayer();
     }
 }

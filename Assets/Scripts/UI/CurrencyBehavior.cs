@@ -7,10 +7,8 @@ public class CurrencyBehavior : MonoBehaviour
 {
     public static CurrencyBehavior instance;
 
-    public Text fixText;
     public Text scrapText;
 
-   public int fixcurrency = 0;
    public int scrapcurrency = 0;
    [SerializeField] private int itemPrice;
 
@@ -20,18 +18,17 @@ public class CurrencyBehavior : MonoBehaviour
     }
     void Start()
     {
-        fixText.text = "Percentage: " + fixcurrency.ToString() + "%";
         scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
     }
 
     public void AddCurrencyFix()
     {
-        fixcurrency += 50;
-        fixText.text = "Percentage: " + fixcurrency.ToString() + "%";
+        scrapcurrency += 50;
+        scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
     }
     public void AddCurrencyScrap()
     {
-        scrapcurrency += 50;
+        scrapcurrency += 100;
         scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
     }
 
@@ -41,6 +38,7 @@ public class CurrencyBehavior : MonoBehaviour
         {
             scrapcurrency -= itemPrice;
             scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+            CosmeticScript.inst.ActivateCosmetic();
         }
     }
 }
