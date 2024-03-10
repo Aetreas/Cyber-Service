@@ -60,6 +60,7 @@ public class TokenScripts : MonoBehaviour
         {
             CurrencyBehavior.instance.AddCurrencyScrap();
             Bot.SetActive(false);
+            PromptBox.SetActive(false);
         }
     }
 }

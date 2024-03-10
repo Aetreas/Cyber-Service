@@ -18,18 +18,18 @@ public class CurrencyBehavior : MonoBehaviour
     }
     void Start()
     {
-        scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+        scrapText.text = scrapcurrency.ToString();
     }
 
     public void AddCurrencyFix()
     {
         scrapcurrency += 50;
-        scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+        scrapText.text = scrapcurrency.ToString();
     }
     public void AddCurrencyScrap()
     {
         scrapcurrency += 100;
-        scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+        scrapText.text = scrapcurrency.ToString();
     }
 
     public void Buy()
@@ -37,7 +37,7 @@ public class CurrencyBehavior : MonoBehaviour
         if (scrapcurrency >= itemPrice)
         {
             scrapcurrency -= itemPrice;
-            scrapText.text = "Money: " + scrapcurrency.ToString() + "$";
+            scrapText.text = scrapcurrency.ToString();
             CosmeticScript.inst.ActivateCosmetic();
         }
     }
