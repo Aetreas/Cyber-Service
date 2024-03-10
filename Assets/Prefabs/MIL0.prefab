@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8748038995422057890}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.89, z: 0}
   m_LocalScale: {x: 1.2, y: 1.8, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2331886661310293803}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &3455564743410028194
 CharacterController:
@@ -80,10 +80,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.95
+  m_Radius: 0.75
+  m_Height: 2.45
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.21845475, z: 0}
 --- !u!114 &4520075957594083845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +164,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7019457809783301592, guid: 22370eef807920f4ea17640681e186b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2716ac57e44b1234b8d26cc0ec2c9e26, type: 2}
+    - target: {fileID: -4993014496342222676, guid: 22370eef807920f4ea17640681e186b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2716ac57e44b1234b8d26cc0ec2c9e26, type: 2}
+    - target: {fileID: -3167946861159780578, guid: 22370eef807920f4ea17640681e186b5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2716ac57e44b1234b8d26cc0ec2c9e26, type: 2}
     - target: {fileID: 919132149155446097, guid: 22370eef807920f4ea17640681e186b5, type: 3}
       propertyPath: m_Name
       value: Mil0 Mixamo
