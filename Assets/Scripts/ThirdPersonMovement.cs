@@ -9,14 +9,19 @@ public class ThirdPersonMovement : MonoBehaviour
     public static ThirdPersonMovement Instance;
 
     public CharacterController controller;
-    public Transform cam;
+    
 
     public float speed = 6f;
-    //public float jumpSpeed;
-    //private float ySpeed;
+    public float rotationSpeed;
+    public float jumpSpeed;
+    
+    
+    private float ySpeed;
+    private float originalStepOffset;
+    [SerializeField] private Transform cameraTransform;
 
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
+    
+    
 
 
     private void Awake()
@@ -26,7 +31,8 @@ public class ThirdPersonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        controller = GetComponent<CharacterController>();
+        originalStepOffset = controller.stepOffset;
     }
 
     // Update is called once per frame
@@ -35,26 +41,49 @@ public class ThirdPersonMovement : MonoBehaviour
         //player movement inputs (using input management to prepare for controller support)
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        float magnitude = Mathf.Clamp01(direction.magnitude) * speed;
 
-        //ySpeed += Physics.gravity.y * Time.deltaTime;
+        direction = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * direction;
 
-        //if (InputGetButtonDown("Jump"))
+        ySpeed += Physics.gravity.y * Time.deltaTime;
 
-
-
-
-
-        if (direction.magnitude >= 0.1f) //move where camera is pointed
+        if (controller.isGrounded)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            controller.stepOffset = originalStepOffset;
+            ySpeed = -0.5f;
+            if(Input.GetButtonDown("Jump"))
+            {
+                ySpeed = jumpSpeed;
+            }
 
-
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+        else
+        {
+            controller.stepOffset = 0;
+        }
+
+        Vector3 velocity = direction * magnitude;
+        velocity.y = ySpeed;
+
+        controller.Move(velocity * Time.deltaTime);
+
+
+
+
+
+
+
+
+
+        if (direction != Vector3.zero)//smooth rotation
+        {
+            Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+        
 
         //Shop Input
         //if (Input.GetKeyDown(KeyCode.X))
@@ -66,6 +95,18 @@ public class ThirdPersonMovement : MonoBehaviour
         //    }
         //        }
 
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public void FreezePlayer()
