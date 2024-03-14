@@ -14,7 +14,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speed = 6f;
     public float rotationSpeed;
     public float jumpSpeed;
-    
+    public bool isJumping;
+    public bool isHovering;
+    public bool hasHovering = false;
     
     private float ySpeed;
     private float originalStepOffset;
@@ -53,9 +55,13 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             controller.stepOffset = originalStepOffset;
             ySpeed = -0.5f;
+            Physics.gravity = new Vector3(0, -19, 0);
+            isJumping = false;
+            isHovering = false;
             if(Input.GetButtonDown("Jump"))
             {
                 ySpeed = jumpSpeed;
+                isJumping = true;
             }
 
         }
@@ -68,6 +74,13 @@ public class ThirdPersonMovement : MonoBehaviour
         velocity.y = ySpeed;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(Input.GetButtonDown("Ability") && isJumping == true && hasHovering == true)
+        {
+            StartCoroutine(Hovering());
+        }
+
+
 
 
 
@@ -115,7 +128,23 @@ public class ThirdPersonMovement : MonoBehaviour
    }
    public void UnFreezePlayer()
     {
-        speed = 6f;
+        speed = 9f;
+    }
+
+    IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
+    {
+        isHovering = true;
+        Physics.gravity = new Vector3(0, -0.5f, 0);
+
+        yield return new WaitForSeconds (6f);
+
+        isHovering = false;
+        Physics.gravity = new Vector3(0, -19, 0);
+    }
+
+    public void HoverObtained()
+    {
+        hasHovering = true;
     }
 }
 
