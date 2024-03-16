@@ -15,7 +15,9 @@ public class ScenesManager : MonoBehaviour
     public enum Scene
     {
         MainMenu,
-        SampleScene
+        SampleScene,
+        Level1,
+        Level3
     }
 
     public void LoadScene(Scene scene)
@@ -26,6 +28,15 @@ public class ScenesManager : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(Scene.MainMenu.ToString());
+    }
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene(Scene.Level1.ToString());
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene(Scene.Level3.ToString());
     }
 
     public void QuitGame()
