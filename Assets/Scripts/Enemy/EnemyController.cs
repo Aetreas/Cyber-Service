@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public static EnemyController instance;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void EnemyTakeDamage(int dmg)
+    {
+        GameManager.gameManager.enemyHP.DamageUnit(dmg);
     }
 }
