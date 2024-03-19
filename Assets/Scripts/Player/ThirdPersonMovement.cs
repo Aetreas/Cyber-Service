@@ -114,6 +114,11 @@ public class ThirdPersonMovement : MonoBehaviour
            // Debug.Log(GameManager.gameManager.playerHP.Health);
         //}
 
+        if (GameManager.gameManager.playerHP.Health <= 0)// death function
+        {
+
+        }
+
     }
 
     private void OnApplicationFocus(bool focus)
