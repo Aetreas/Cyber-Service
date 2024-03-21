@@ -108,11 +108,11 @@ public class ThirdPersonMovement : MonoBehaviour
         //    }
         //        }
 
-        //if (Input.GetKeyDown(KeyCode.Q)) (player damage tester)
-        //{
-           // PlayerTakeDamage(20);
-           // Debug.Log(GameManager.gameManager.playerHP.Health);
-        //}
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            PlayerTakeDamage(20);
+            Debug.Log(GameManager.gameManager.playerHP.Health);
+        }
 
         if (GameManager.gameManager.playerHP.Health <= 0)// death function
         {
@@ -142,12 +142,12 @@ public class ThirdPersonMovement : MonoBehaviour
         speed = 9f;
     }
 
-    private void PlayerTakeDamage(int dmg)
+    public void PlayerTakeDamage(int dmg)
     {
         GameManager.gameManager.playerHP.DamageUnit(dmg);
     }
 
-        private void PlayerHeal(int healing)
+        public void PlayerHeal(int healing)
     {
         GameManager.gameManager.playerHP.HealUnit(healing);
     }
