@@ -9,6 +9,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public static ThirdPersonMovement Instance;
 
     public CharacterController controller;
+    public Animator miloAnimator;
     
 
     public float speed = 6f;
@@ -18,6 +19,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isHovering;
     public bool hasHovering = false;
     
+    private Animator miloAnim;
     private float ySpeed;
     private float originalStepOffset;
     [SerializeField] private Transform cameraTransform;
@@ -34,6 +36,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        miloAnimator = GetComponent<Animator>();
         originalStepOffset = controller.stepOffset;
     }
 
@@ -90,11 +93,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
 
-        if (direction != Vector3.zero)//smooth rotation
+        if (direction != Vector3.zero)//checks movement and smooth rotation
         {
+            miloAnimator.SetTrigger("Walk");
             Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            miloAnimator.SetTrigger("Stop");
         }
         
 
