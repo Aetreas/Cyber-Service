@@ -18,6 +18,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isJumping;
     public bool isHovering;
     public bool hasHovering = false;
+    public int honor = 0;
     
     private Animator miloAnim;
     private float ySpeed;
@@ -116,7 +117,7 @@ public class ThirdPersonMovement : MonoBehaviour
         //    }
         //        }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))//dmg test
         {
             PlayerTakeDamage(20);
             Debug.Log(GameManager.gameManager.playerHP.Health);
@@ -174,6 +175,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public void HoverObtained()
     {
         hasHovering = true;
+    }
+
+    public void AddHonor()
+    {
+        honor += 1;
+        //Debug.Log(honor);
     }
 }
 

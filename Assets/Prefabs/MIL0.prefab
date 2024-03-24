@@ -64,6 +64,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1981614422799658497}
     m_Modifications:
+    - target: {fileID: 27735919815199432, guid: 61ff8951b6c960a449357bc514cebee6, type: 3}
+      propertyPath: m_Height
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 27735919815199432, guid: 61ff8951b6c960a449357bc514cebee6, type: 3}
+      propertyPath: m_Radius
+      value: 0.56
+      objectReference: {fileID: 0}
     - target: {fileID: 6035095415848453077, guid: 61ff8951b6c960a449357bc514cebee6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -179,4 +187,5 @@ MonoBehaviour:
   isJumping: 0
   isHovering: 0
   hasHovering: 0
+  honor: 0
   cameraTransform: {fileID: 0}

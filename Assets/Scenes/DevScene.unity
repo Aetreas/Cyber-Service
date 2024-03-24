@@ -508,7 +508,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351443565}
-  m_LocalRotation: {x: 0.24764206, y: 0.000000003829691, z: -9.788829e-10, w: 0.9688516}
+  m_LocalRotation: {x: 0.24764204, y: -0.000000025297208, z: 0.0000000064660597, w: 0.9688516}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -517,6 +517,11 @@ Transform:
   m_Father: {fileID: 932869280}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &492201251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2285358594142329076, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+  m_PrefabInstance: {fileID: 1909358830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &765069435
 GameObject:
   m_ObjectHideFlags: 3
@@ -587,7 +592,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765069435}
-  m_LocalRotation: {x: 0.19885017, y: 0.000000018856769, z: -0.0000000038260786, w: 0.98002994}
+  m_LocalRotation: {x: 0.19885017, y: 0.000000018853148, z: -0.0000000038253436, w: 0.98002994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -681,7 +686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765413539}
-  m_LocalRotation: {x: 0.22912112, y: -0.0000000027629483, z: 6.503505e-10, w: 0.973398}
+  m_LocalRotation: {x: 0.22912112, y: -0.000000015620904, z: 0.000000003676892, w: 0.973398}
   m_LocalPosition: {x: 0, y: 10.731124, z: -12.478724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1199,6 +1204,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+--- !u!1 &1592001462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1281019220674766581, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+  m_PrefabInstance: {fileID: 1909358830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1651653679
 GameObject:
   m_ObjectHideFlags: 3
@@ -1507,6 +1517,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6276865588454236794, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1281019220674766581, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: m_Name
       value: Enemy1_Mixamo Variant
@@ -1555,6 +1569,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2285358594142329076, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: enemyObj
+      value: 
+      objectReference: {fileID: 1592001462}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: FixScrapPrompt
+      value: 
+      objectReference: {fileID: 492201251}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
