@@ -16,6 +16,7 @@ public class ScenesManager : MonoBehaviour
     {
         MainMenu,
         SampleScene,
+        Tutorial,
         Level1,
         Level3
     }
@@ -24,7 +25,10 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene.ToString());
     }
-
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene(Scene.Tutorial.ToString());
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(Scene.MainMenu.ToString());

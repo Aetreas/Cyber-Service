@@ -9,6 +9,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     [SerializeField] Button _levelone;
     [SerializeField] Button _levelthree;
+    [SerializeField] Button _tutorial;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class LevelSelectMenu : MonoBehaviour
         levelSelect.SetActive(false);
         _levelone.onClick.AddListener(LoadLevel1);
         _levelthree.onClick.AddListener(LoadLevel3);
+        _tutorial.onClick.AddListener(LoadTut);
     }
 
     // Update is called once per frame
@@ -47,6 +49,11 @@ public class LevelSelectMenu : MonoBehaviour
     private void LoadLevel3()
     {
         ScenesManager.Instance.LoadLevel3();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+    private void LoadTut()
+    {
+        ScenesManager.Instance.LoadTutorial();
         Cursor.lockState = CursorLockMode.Locked;
     }
 }
