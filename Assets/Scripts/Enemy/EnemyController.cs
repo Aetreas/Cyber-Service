@@ -136,7 +136,7 @@ public class EnemyController : MonoBehaviour
         }
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Character").transform.position) >= 6f)
+            if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
                 m_IsPatrol = true;
                 m_PlayerNear = false;
@@ -147,7 +147,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Character").transform.position) >= 2.5f)
+                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
                 {
                     Stop();
                     m_WaitTime -= Time.deltaTime;

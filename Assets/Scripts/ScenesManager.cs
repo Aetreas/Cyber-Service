@@ -38,6 +38,10 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.LoadScene(Scene.Level3.ToString());
     }
+    public void LoadHub()
+    {
+        SceneManager.LoadScene(Scene.SampleScene.ToString());
+    }
 
     public void QuitGame()
     {

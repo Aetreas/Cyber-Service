@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LevelSelectMenu : MonoBehaviour
 {
     public GameObject levelSelect;
-    public bool isPaused;
 
     [SerializeField] Button _levelone;
     [SerializeField] Button _levelthree;
@@ -43,9 +42,11 @@ public class LevelSelectMenu : MonoBehaviour
     private void LoadLevel1()
     {
         ScenesManager.Instance.LoadLevel1();
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void LoadLevel3()
     {
         ScenesManager.Instance.LoadLevel3();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

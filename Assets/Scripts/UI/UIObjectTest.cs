@@ -72,7 +72,7 @@ public class UIObjectTest : MonoBehaviour
     public void CloseMenu()
     {
         dialogBox.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         ThirdPersonMovement.Instance.UnFreezePlayer();
     }
 }
