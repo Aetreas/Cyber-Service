@@ -21,7 +21,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public int honor = 0;
     
     private Animator miloAnim;
-    private float ySpeed;
+    public float ySpeed;
     private float originalStepOffset;
     [SerializeField] private Transform cameraTransform;
 
@@ -163,11 +163,14 @@ public class ThirdPersonMovement : MonoBehaviour
 
     IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
     {
+        ySpeed = 0.5f;
         isHovering = true;
-        Physics.gravity = new Vector3(0, -0.5f, 0);
+        Physics.gravity = new Vector3(0, 0, 0);
+        
 
         yield return new WaitForSeconds (6f);
 
+        ySpeed = -0.5f;
         isHovering = false;
         Physics.gravity = new Vector3(0, -19, 0);
     }
