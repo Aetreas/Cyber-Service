@@ -32,6 +32,7 @@ public class UIObjectTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             uiInput = false;
+            Time.timeScale = 1f;
         }
     }
 
@@ -66,13 +67,15 @@ public class UIObjectTest : MonoBehaviour
     {
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        ThirdPersonMovement.Instance.FreezePlayer();
+        //ThirdPersonMovement.Instance.FreezePlayer();
+        Time.timeScale = 0f;
     }
 
     public void CloseMenu()
     {
         dialogBox.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        ThirdPersonMovement.Instance.UnFreezePlayer();
+        //ThirdPersonMovement.Instance.UnFreezePlayer();
+
     }
 }
