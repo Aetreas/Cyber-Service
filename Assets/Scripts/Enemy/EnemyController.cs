@@ -46,6 +46,10 @@ public class EnemyController : MonoBehaviour
     bool m_IsPatrol;
     bool m_CaughtPlayer;
 
+    //soundeffects
+    //[SerializeField] private AudioClip damagesoundclip;
+
+
     // Start is called before the first frame update
     void Start()
     {
