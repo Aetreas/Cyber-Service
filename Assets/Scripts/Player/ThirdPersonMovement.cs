@@ -84,6 +84,13 @@ public class ThirdPersonMovement : MonoBehaviour
             StartCoroutine(Hovering());
         }
 
+        if(Input.GetButtonUp("Ability") && isHovering == true)
+        {
+            ySpeed = -0.5f;
+            isHovering = false;
+            Physics.gravity = new Vector3(0, -19, 0);
+        }
+
 
 
 
@@ -168,7 +175,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Physics.gravity = new Vector3(0, 0, 0);
         
 
-        yield return new WaitForSeconds (6f);
+        yield return new WaitForSeconds (3f);
 
         ySpeed = -0.5f;
         isHovering = false;

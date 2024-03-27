@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public static EnemyController instance;
     public GameObject enemyObj;
     public GameObject FixScrapPrompt;
+    public GameObject AttackCollider;
     public bool fixInteract = false;
     public bool scrapInteract = false;
     public bool enemyDown = false;
@@ -43,6 +44,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         FixScrapPrompt.SetActive(false);
+        AttackCollider.SetActive(false);
         //Jan's Variable Initializing
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
@@ -102,6 +104,8 @@ public class EnemyController : MonoBehaviour
         {
             Patrolling();
         }
+
+        //GetComponent<Animator>().SetTrigger("Attack");
     }
 
     public void EnemyTakeDamage(int dmg)

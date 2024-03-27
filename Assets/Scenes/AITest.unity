@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &128521365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7255062128215867185, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+  m_PrefabInstance: {fileID: 295613610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222814771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2285358594142329076, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
@@ -239,6 +244,10 @@ PrefabInstance:
       propertyPath: startWaitTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: AttackCollider
+      value: 
+      objectReference: {fileID: 128521365}
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: FixScrapPrompt
       value: 
