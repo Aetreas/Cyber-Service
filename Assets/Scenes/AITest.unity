@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &128521365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7255062128215867185, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
-  m_PrefabInstance: {fileID: 295613610}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &222814771 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2285358594142329076, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
@@ -233,6 +228,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: pc
+      value: 
+      objectReference: {fileID: 2068661448}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: enemyObj
       value: 
       objectReference: {fileID: 262003278}
@@ -247,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: AttackCollider
       value: 
-      objectReference: {fileID: 128521365}
+      objectReference: {fileID: 0}
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: FixScrapPrompt
       value: 
@@ -255,6 +254,10 @@ PrefabInstance:
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: playerMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: EnemyAttackCooldown
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: obstacleMask.m_Bits
@@ -273,7 +276,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1324122666}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3154235343598384564, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1281019220674766581, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
@@ -1514,3 +1518,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4983f7a4eb0415744b20c90883c932f8, type: 3}
+--- !u!114 &2068661448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+  m_PrefabInstance: {fileID: 372421425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779bff6104998f04cbf5806bfe4db277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

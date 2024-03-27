@@ -53,59 +53,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5, y: 2.5, z: 2.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7255062128215867185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2732951057285109901}
-  - component: {fileID: 6332598634065222150}
-  m_Layer: 0
-  m_Name: AttackHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2732951057285109901
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255062128215867185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.084, z: 0.671}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1913124519241071695}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6332598634065222150
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7255062128215867185}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.41
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2091484285101497252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,9 +147,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4842384831631345431}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2732951057285109901}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
       insertIndex: -1
@@ -283,11 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObj: {fileID: 1281019220674766581}
+  pc: {fileID: 0}
   FixScrapPrompt: {fileID: 2285358594142329076}
-  AttackCollider: {fileID: 7255062128215867185}
   fixInteract: 0
   scrapInteract: 0
   enemyDown: 0
+  EnemyCanAttack: 1
+  EnemyIsAttacking: 0
+  EnemyAttackCooldown: 3
   navMeshAgent: {fileID: 0}
   startWaitTime: 4
   timeToRotate: 2

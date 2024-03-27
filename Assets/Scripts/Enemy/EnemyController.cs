@@ -7,11 +7,17 @@ public class EnemyController : MonoBehaviour
 {
     public static EnemyController instance;
     public GameObject enemyObj;
+    public ThirdPersonMovement pc;
     public GameObject FixScrapPrompt;
-    public GameObject AttackCollider;
+    //public GameObject AttackCollider;
+    
     public bool fixInteract = false;
     public bool scrapInteract = false;
     public bool enemyDown = false;
+    public bool EnemyCanAttack = true;
+    public bool EnemyIsAttacking = false;
+    public float EnemyAttackCooldown = 3.0f;
+    
     // Jan's Variable Implementations
     public NavMeshAgent navMeshAgent;
     public float startWaitTime = 4;
@@ -44,7 +50,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         FixScrapPrompt.SetActive(false);
-        AttackCollider.SetActive(false);
+        //AttackCollider.SetActive(false);
         //Jan's Variable Initializing
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
@@ -105,6 +111,15 @@ public class EnemyController : MonoBehaviour
             Patrolling();
         }
 
+        if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) <= 2.5f)
+        {
+            if(EnemyCanAttack == true)
+            {
+                EnemyAttack();
+            }
+        }
+
+
         //GetComponent<Animator>().SetTrigger("Attack");
     }
 
@@ -124,6 +139,25 @@ public class EnemyController : MonoBehaviour
         if (scrapInteract == true && enemyDown == true)
         {
             Destroy(enemyObj);
+        }
+    }
+
+    public void EnemyAttack()
+    {
+        EnemyIsAttacking = true;
+        EnemyCanAttack = false;
+        StartCoroutine(EnemyDealDamage());
+        GetComponent<Animator>().SetTrigger("Attack");
+        StartCoroutine(ResetEnemyCooldown());
+    }
+
+    IEnumerator EnemyDealDamage()
+    {
+        if(EnemyIsAttacking)
+        {
+            yield return new WaitForSeconds(0.5f);
+            pc.PlayerTakeDamage(20);
+            Debug.Log(GameManager.gameManager.playerHP.Health);
         }
     }
     //Jan's tutorial methods
@@ -264,5 +298,18 @@ public class EnemyController : MonoBehaviour
                 m_PlayerPosition = player.transform.position;
             }
         }
+    }
+
+    IEnumerator ResetEnemyCooldown()
+    {
+        StartCoroutine(ResetEnemyBool());
+        yield return new WaitForSeconds(EnemyAttackCooldown);
+        EnemyCanAttack = true;
+    }
+
+    IEnumerator ResetEnemyBool()
+    {
+        yield return new WaitForSeconds(2.0f);
+        EnemyIsAttacking = false;
     }
     }
