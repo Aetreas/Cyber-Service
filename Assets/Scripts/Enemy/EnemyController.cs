@@ -47,7 +47,9 @@ public class EnemyController : MonoBehaviour
     bool m_CaughtPlayer;
 
     //soundeffects
-    //[SerializeField] private AudioClip damagesoundclip;
+    [SerializeField] private AudioClip damagesoundclip;
+    [SerializeField] private AudioClip fixsoundclip;
+    [SerializeField] private AudioClip destroysoundclip;
 
 
     // Start is called before the first frame update
@@ -129,6 +131,7 @@ public class EnemyController : MonoBehaviour
 
     public void EnemyTakeDamage(int dmg)
     {
+        SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
         GameManager.gameManager.enemyHP.DamageUnit(dmg);
     }
 
@@ -136,12 +139,16 @@ public class EnemyController : MonoBehaviour
     {
         if (fixInteract == true && enemyDown == true)
         {
+            SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
+
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
         }
 
         if (scrapInteract == true && enemyDown == true)
         {
+            SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
+
             Destroy(enemyObj);
         }
     }
