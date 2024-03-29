@@ -15,10 +15,15 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speed = 6f;
     public float rotationSpeed;
     public float jumpSpeed;
+    [SerializeField] private float jumpButtonGracePeriod;
+    private float? lastGroundedTime;
+    private float? jumpButtonPressedTime;
     public bool isJumping;
     public bool isHovering;
+    public bool isGrounded;
     public bool hasHovering = false;
     public int honor = 0;
+    public int totalbots = 0;
     
     private Animator miloAnim;
     public float ySpeed;
@@ -57,21 +62,43 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            lastGroundedTime = Time.time;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpButtonPressedTime = Time.time;
+        }
+
+        if (Time.time - lastGroundedTime <= jumpButtonGracePeriod)
+        {
             controller.stepOffset = originalStepOffset;
             ySpeed = -0.5f;
-            Physics.gravity = new Vector3(0, -19, 0);
+            miloAnimator.SetBool("isGrounded", true);
+            isGrounded = true;
+            miloAnimator.SetBool("isJumping", false);
             isJumping = false;
-            isHovering = false;
-            if(Input.GetButtonDown("Jump"))
+            miloAnimator.SetBool("isFalling", false);
+            
+            if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
             {
                 ySpeed = jumpSpeed;
+                miloAnimator.SetBool("isJumping", true);
                 isJumping = true;
+                jumpButtonPressedTime = null;
+                lastGroundedTime = null;
             }
-
         }
         else
         {
             controller.stepOffset = 0;
+            miloAnimator.SetBool("isGrounded", false);
+            isGrounded = false;
+
+            if ((isJumping && ySpeed < 0) || ySpeed < -2)
+            {
+                miloAnimator.SetBool("isFalling", true);
+            }
         }
 
         Vector3 velocity = direction * magnitude;
@@ -103,14 +130,14 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction != Vector3.zero)//checks movement and smooth rotation
         {
-            miloAnimator.SetTrigger("Walk");
+            miloAnimator.SetBool("isMoving", true);
             Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
         else
         {
-            miloAnimator.SetTrigger("Stop");
+            miloAnimator.SetBool("isMoving", false);
         }
         
 
@@ -124,11 +151,11 @@ public class ThirdPersonMovement : MonoBehaviour
         //    }
         //        }
 
-        if (Input.GetKeyDown(KeyCode.K))//dmg test
-        {
-            PlayerTakeDamage(20);
-            Debug.Log(GameManager.gameManager.playerHP.Health);
-        }
+        //if (Input.GetKeyDown(KeyCode.K))//dmg test
+        //{
+            //PlayerTakeDamage(20);
+            //Debug.Log(GameManager.gameManager.playerHP.Health);
+        //}
 
         if (GameManager.gameManager.playerHP.Health <= 0)// death function
         {
@@ -191,6 +218,11 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         honor += 1;
         //Debug.Log(honor);
+    }
+
+    public void AddTotalBots()
+    {
+        totalbots += 1;
     }
 }
 

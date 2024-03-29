@@ -103,8 +103,18 @@ public class EnemyController : MonoBehaviour
             GetComponent<BoxCollider>().enabled = false;
             FixScrapPrompt.SetActive(true);
             enemyDown = true;
+            EnemyCanAttack = false;
+            Stop();
             //Destroy(enemyObj);
         }
+
+        //damage tester
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            EnemyTakeDamage(20);
+            Debug.Log(GameManager.gameManager.enemyHP.Health);
+        }
+
         //Jan's Update Function Calls
         EnvironmentView();
 
@@ -121,6 +131,7 @@ public class EnemyController : MonoBehaviour
         {
             if(EnemyCanAttack == true)
             {
+                Stop();
                 EnemyAttack();
             }
         }
@@ -143,6 +154,7 @@ public class EnemyController : MonoBehaviour
 
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
+            ThirdPersonMovement.Instance.AddTotalBots();
         }
 
         if (scrapInteract == true && enemyDown == true)
@@ -150,6 +162,7 @@ public class EnemyController : MonoBehaviour
             SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
 
             Destroy(enemyObj);
+            ThirdPersonMovement.Instance.AddTotalBots();
         }
     }
 
