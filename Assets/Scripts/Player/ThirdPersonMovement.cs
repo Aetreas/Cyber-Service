@@ -10,6 +10,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public CharacterController controller;
     public Animator miloAnimator;
+    public GameObject Melee;
     
 
     public float speed = 6f;
@@ -18,10 +19,13 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private float jumpButtonGracePeriod;
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
+    public float AttackCooldown = 1.0f;
     public bool isJumping;
     public bool isHovering;
     public bool isGrounded;
     public bool hasHovering = false;
+    public bool CanAttack = true;
+    public bool isAttacking = false;
     public int honor = 0;
     public int totalbots = 0;
     
@@ -139,6 +143,15 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             miloAnimator.SetBool("isMoving", false);
         }
+
+        if(Input.GetButtonDown("Melee") && isGrounded)
+        {
+            if (CanAttack)
+            {
+                MeleeAttack();
+                //Debug.Log("Attack Executed.");
+            }
+        }
         
 
         //Shop Input
@@ -223,6 +236,32 @@ public class ThirdPersonMovement : MonoBehaviour
     public void AddTotalBots()
     {
         totalbots += 1;
+    }
+
+    public void MeleeAttack()
+    {
+        isAttacking = true;
+        CanAttack = false;
+        Animator colliderAnim = Melee.GetComponent<Animator>();
+        colliderAnim.SetTrigger("Attack");
+        miloAnimator.SetBool("isAttacking", true);
+        //AudioSource as = GetComponent<AudioSource>();
+        //as.PlayOneShot(AttackSound);
+        StartCoroutine(ResetAttackCooldown());
+    }
+
+    IEnumerator ResetAttackCooldown()
+    {
+        StartCoroutine(ResetAttackBool());
+        yield return new WaitForSeconds(AttackCooldown);
+        CanAttack = true;
+    }
+
+    IEnumerator ResetAttackBool()
+    {
+        yield return new WaitForSeconds(1.0f);
+        isAttacking = false;
+        miloAnimator.SetBool("isAttacking", false);
     }
 }
 

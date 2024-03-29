@@ -1005,6 +1005,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1443251059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7069112437029040976, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+  m_PrefabInstance: {fileID: 1523698091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1495542674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8365093960667759381, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
@@ -1166,6 +1171,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6288006179438952407, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: Melee
+      value: 
+      objectReference: {fileID: 1443251059}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: miloAnimator
+      value: 
+      objectReference: {fileID: 1934583910}
     - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -1200,6 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 6288006179438952407, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1586,3 +1604,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+--- !u!95 &1934583910 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7262555451932295668, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+  m_PrefabInstance: {fileID: 1523698091}
+  m_PrefabAsset: {fileID: 0}
