@@ -17,6 +17,17 @@ public class EnemyController : MonoBehaviour
     public bool EnemyCanAttack = true;
     public bool EnemyIsAttacking = false;
     public float EnemyAttackCooldown = 3.0f;
+
+    //FOV attack detector
+    public float radius;
+    [Range(0,360)]
+
+    public float angle;
+    public GameObject playerRef;
+    public LayerMask targetMask;
+    public LayerMask obstructionMask;
+    public bool attackRange;
+
     
     // Jan's Variable Implementations
     public NavMeshAgent navMeshAgent;
@@ -71,6 +82,10 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+
+        //FOV attack detection
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(AttackFOVRoutine());
     }
 
     // Update is called once per frame
@@ -109,11 +124,11 @@ public class EnemyController : MonoBehaviour
         }
 
         //damage tester
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            EnemyTakeDamage(20);
-            Debug.Log(GameManager.gameManager.enemyHP.Health);
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+            //EnemyTakeDamage(20);
+            //Debug.Log(GameManager.gameManager.enemyHP.Health);
+        //}
 
         //Jan's Update Function Calls
         EnvironmentView();
@@ -127,13 +142,17 @@ public class EnemyController : MonoBehaviour
             Patrolling();
         }
 
-        if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) <= 2.5f)
+        if (attackRange == true)
         {
             if(EnemyCanAttack == true)
             {
-                Stop();
+                speedWalk = 0;
                 EnemyAttack();
             }
+        }
+        else
+        {
+            speedWalk = 6;
         }
 
 
@@ -184,6 +203,45 @@ public class EnemyController : MonoBehaviour
             Debug.Log(GameManager.gameManager.playerHP.Health);
         }
     }
+
+    private IEnumerator AttackFOVRoutine()
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
+
+        while (true)
+        {
+            yield return wait;
+            FieldOfViewCheck();
+        }
+    }
+
+    public void FieldOfViewCheck()//detects player character for attacking, respects objects on the wall layer such that player cannot be damaged through them.
+    {
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+
+        if (rangeChecks.Length != 0)
+        {
+            Transform target = rangeChecks[0].transform;
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                
+
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    attackRange = true;
+                    
+                else
+                    attackRange = false;
+            }
+            else
+                attackRange = false;
+        }
+        else if (attackRange)
+            attackRange = false;
+    }
+
     //Jan's tutorial methods
 
     private void Chasing()

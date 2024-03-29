@@ -236,6 +236,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 262003278}
     - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+      propertyPath: playerRef
+      value: 
+      objectReference: {fileID: 1244382688}
+    - target: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
       propertyPath: navMeshAgent
       value: 
       objectReference: {fileID: 262003279}
@@ -936,6 +940,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1244382688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9177518070718945711, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+  m_PrefabInstance: {fileID: 372421425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1305987713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1532,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
   m_PrefabInstance: {fileID: 372421425}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1244382688}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 779bff6104998f04cbf5806bfe4db277, type: 3}

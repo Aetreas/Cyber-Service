@@ -160,6 +160,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6395657140519690383}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3524187111205724445}
   m_SourcePrefab: {fileID: 100100000, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}
 --- !u!1 &1281019220674766581 stripped
 GameObject:
@@ -235,6 +238,16 @@ MonoBehaviour:
   EnemyCanAttack: 1
   EnemyIsAttacking: 0
   EnemyAttackCooldown: 3
+  radius: 4.35
+  angle: 135
+  playerRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  attackRange: 0
   navMeshAgent: {fileID: 0}
   startWaitTime: 4
   timeToRotate: 2
@@ -252,6 +265,9 @@ MonoBehaviour:
   edgeIterations: 4
   edgeDistance: 0.5
   waypoints: []
+  damagesoundclip: {fileID: 0}
+  fixsoundclip: {fileID: 0}
+  destroysoundclip: {fileID: 0}
 --- !u!95 &6395657140519690383
 Animator:
   serializedVersion: 5
@@ -273,6 +289,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &3524187111205724445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281019220674766581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78, y: 2.1, z: 0.85}
+  m_Center: {x: 0, y: 1.18, z: 0}
 --- !u!4 &1913124519241071695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c158d3efea1da7d4fb566f77eb857ce0, type: 3}

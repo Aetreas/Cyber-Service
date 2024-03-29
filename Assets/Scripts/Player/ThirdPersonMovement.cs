@@ -245,6 +245,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Animator colliderAnim = Melee.GetComponent<Animator>();
         colliderAnim.SetTrigger("Attack");
         miloAnimator.SetBool("isAttacking", true);
+        speed = 5f;
         //AudioSource as = GetComponent<AudioSource>();
         //as.PlayOneShot(AttackSound);
         StartCoroutine(ResetAttackCooldown());
@@ -262,6 +263,7 @@ public class ThirdPersonMovement : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         isAttacking = false;
         miloAnimator.SetBool("isAttacking", false);
+        speed = 10f;
     }
 }
 
