@@ -13,6 +13,7 @@ public class DialogueScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ThirdPersonMovement.Instance.FreezePlayer();
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -30,6 +31,7 @@ public class DialogueScript : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                ThirdPersonMovement.Instance.UnFreezePlayer();
             }
         }
     }

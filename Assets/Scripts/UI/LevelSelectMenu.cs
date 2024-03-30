@@ -45,15 +45,18 @@ public class LevelSelectMenu : MonoBehaviour
     {
         ScenesManager.Instance.LoadLevel1();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
     private void LoadLevel3()
     {
         ScenesManager.Instance.LoadLevel3();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
     private void LoadTut()
     {
         ScenesManager.Instance.LoadTutorial();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 }

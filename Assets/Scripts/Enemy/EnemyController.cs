@@ -315,6 +315,7 @@ public class EnemyController : MonoBehaviour
     {
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
+        GetComponent<Animator>().SetTrigger("Walking");
     }
     void Stop()
     {
