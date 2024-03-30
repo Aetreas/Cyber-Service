@@ -11,6 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Animator miloAnimator;
     public GameObject Melee;
+    public GameObject loseUI;
     
 
     public float speed = 6f;
@@ -48,6 +49,7 @@ public class ThirdPersonMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         miloAnimator = GetComponent<Animator>();
         originalStepOffset = controller.stepOffset;
+        loseUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -172,7 +174,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (GameManager.gameManager.playerHP.Health <= 0)// death function
         {
-
+            controller.enabled = false;
+            loseUI.SetActive(true);
         }
 
     }

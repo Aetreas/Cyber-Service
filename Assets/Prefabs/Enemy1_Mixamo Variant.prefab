@@ -51,7 +51,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5, y: 2.5, z: 2.5}
+  m_Size: {x: 3, y: 2.5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2091484285101497252
 PrefabInstance:
@@ -232,9 +232,11 @@ MonoBehaviour:
   enemyObj: {fileID: 1281019220674766581}
   pc: {fileID: 0}
   FixScrapPrompt: {fileID: 2285358594142329076}
+  FixScrapDialog: {fileID: 0}
   fixInteract: 0
   scrapInteract: 0
   enemyDown: 0
+  isFixed: 0
   EnemyCanAttack: 1
   EnemyIsAttacking: 0
   EnemyAttackCooldown: 3

@@ -23,8 +23,8 @@ public class CollisionDetection : MonoBehaviour
     {
         if (other.tag == "Enemy" && wc.isAttacking)
         {
-            ec.EnemyTakeDamage(20);
-            Debug.Log(GameManager.gameManager.enemyHP.Health);
+            EnemyController.Instance.EnemyTakeDamage();
+            //Debug.Log(GameManager.gameManager.enemyHP.Health);
         }
     }
 }

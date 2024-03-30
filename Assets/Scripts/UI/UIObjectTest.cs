@@ -7,6 +7,7 @@ public class UIObjectTest : MonoBehaviour
 {
     public GameObject dialogBox;
     public GameObject InteractBox;
+    public ThirdPersonMovement pc;
     public bool uiInput = false;
     
 
@@ -50,7 +51,7 @@ public class UIObjectTest : MonoBehaviour
         {
             uiInput = true;
         }
-        if (uiInput == true)
+        if (uiInput == true && pc.totalbots == 8)
         {
             OpenMenu();
             InteractBox.SetActive(false);
