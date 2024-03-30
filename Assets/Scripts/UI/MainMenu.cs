@@ -29,6 +29,6 @@ public class MainMenu : MonoBehaviour
     }
     private void LoadTutorial()
     {
-        ScenesManager.Instance.LoadTutorial();
+        ScenesManager.Instance.LoadHowToPlay();
     }
 }

@@ -18,7 +18,8 @@ public class ScenesManager : MonoBehaviour
         SampleScene,
         Tutorial,
         Level1,
-        Level3
+        Level3,
+        HowToPlay
     }
 
     public void LoadScene(Scene scene)
@@ -51,6 +52,11 @@ public class ScenesManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quitting game");
+    }
+
+    public void LoadHowToPlay()
+    {
+        SceneManager.LoadScene(Scene.HowToPlay.ToString());
     }
 
 }
