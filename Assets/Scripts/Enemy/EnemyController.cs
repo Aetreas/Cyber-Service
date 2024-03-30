@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public GameObject enemyObj;
     public ThirdPersonMovement pc;
     public GameObject FixScrapPrompt;
+    public GameObject FixScrapDialog;
     //public GameObject AttackCollider;
     
     public bool fixInteract = false;
@@ -67,6 +68,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         FixScrapPrompt.SetActive(false);
+        FixScrapDialog.SetActive(false);
         //AttackCollider.SetActive(false);
         //Jan's Variable Initializing
         m_PlayerPosition = Vector3.zero;
@@ -97,7 +99,7 @@ public class EnemyController : MonoBehaviour
             fixInteract = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Interact2"))
         {
             scrapInteract = true;
         }
@@ -107,7 +109,7 @@ public class EnemyController : MonoBehaviour
             fixInteract = false;
         }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetButtonUp("Interact2"))
         {
             scrapInteract = false;
         }
@@ -161,19 +163,25 @@ public class EnemyController : MonoBehaviour
 
     public void EnemyTakeDamage(int dmg)
     {
-        SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
+        //SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
         GameManager.gameManager.enemyHP.DamageUnit(dmg);
     }
 
     private void OnTriggerStay(Collider other)
     {
+        if(enemyDown == true)
+        {
+            FixScrapDialog.SetActive(true);
+        }
+        
         if (fixInteract == true && enemyDown == true)
         {
-            SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
+            //SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
 
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
+            FixScrapDialog.SetActive(false);
         }
 
         if (scrapInteract == true && enemyDown == true)
