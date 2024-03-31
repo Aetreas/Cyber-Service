@@ -164,6 +164,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             speedWalk = 6;
+            GetComponent<Animator>().ResetTrigger("Attack");
             Patrolling();
         }
 
@@ -199,6 +200,7 @@ public class EnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddTotalBots();
             FixScrapDialog.SetActive(false);
             GetComponent<Animator>().SetBool("Idle", true);
+            GetComponent<Rigidbody>().isKinematic = true;
             isFixed = true;
             this.enabled = false;
         }
