@@ -232,13 +232,13 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void AddHonor()
     {
-        honor += 1;
+        StartCoroutine(HonorDelay());
         //Debug.Log(honor);
     }
 
     public void AddTotalBots()
     {
-        totalbots += 1;
+        StartCoroutine(TotalBotDelay());
     }
 
     public void MeleeAttack()
@@ -268,5 +268,18 @@ public class ThirdPersonMovement : MonoBehaviour
         miloAnimator.SetBool("isAttacking", false);
         speed = 10f;
     }
+
+    IEnumerator HonorDelay()
+    {
+        yield return new WaitForSeconds(1);
+        honor += 1;
+    }
+
+    IEnumerator TotalBotDelay()
+    {
+        yield return new WaitForSeconds(1);
+        totalbots += 1;
+    }
 }
+
 

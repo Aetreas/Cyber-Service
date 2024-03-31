@@ -19,7 +19,8 @@ public class EnemyController : MonoBehaviour
     public bool EnemyCanAttack = true;
     public bool EnemyIsAttacking = false;
     public float EnemyAttackCooldown = 3.0f;
-    public int enemyHP = 50;
+    public int maxHealth = 50;    
+    public int currentHealth;
 
     //FOV attack detector
     public float radius;
@@ -68,12 +69,13 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        //Instance = this;
     }
     
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         FixScrapPrompt.SetActive(false);
         FixScrapDialog.SetActive(false);
         //AttackCollider.SetActive(false);
@@ -122,7 +124,7 @@ public class EnemyController : MonoBehaviour
         }
 
         //death function
-        if (enemyHP <= 0)
+        if (currentHealth <= 0)
         {
             GetComponent<BoxCollider>().enabled = false;
             FixScrapPrompt.SetActive(true);
@@ -168,16 +170,16 @@ public class EnemyController : MonoBehaviour
         //GetComponent<Animator>().SetTrigger("Attack");
     }
 
-    public void EnemyTakeDamage()
+    public void EnemyTakeDamage(int amount)
     {
-        //SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
-        enemyHP -= 6;
-        Debug.Log(enemyHP);
+        SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
+        currentHealth -= amount;
+        Debug.Log(currentHealth);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(enemyDown == true && isFixed == false)
+        if(other.gameObject.tag == "Player" && enemyDown == true && isFixed == false)
         {
             FixScrapDialog.SetActive(true);
         }
@@ -186,10 +188,11 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         
-        if (fixInteract == true && enemyDown == true)
+        if (other.gameObject.tag == "Player" && fixInteract == true && enemyDown == true)
         {
             //SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
 
+            fixInteract = false;
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
@@ -197,10 +200,11 @@ public class EnemyController : MonoBehaviour
             isFixed = true;
         }
 
-        if (scrapInteract == true && enemyDown == true)
+        if (other.gameObject.tag == "Player" && scrapInteract == true && enemyDown == true)
         {
             SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
 
+            scrapInteract = false;
             Destroy(enemyObj);
             FixScrapDialog.SetActive(false);
             ThirdPersonMovement.Instance.AddTotalBots();
@@ -209,7 +213,11 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        FixScrapDialog.SetActive(false);
+        if (other.gameObject.tag == "Player")
+        {
+            FixScrapDialog.SetActive(false);
+        }
+        
     }
 
     public void EnemyAttack()

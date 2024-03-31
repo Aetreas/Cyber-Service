@@ -240,8 +240,10 @@ MonoBehaviour:
   EnemyCanAttack: 1
   EnemyIsAttacking: 0
   EnemyAttackCooldown: 3
-  radius: 4.35
-  angle: 135
+  maxHealth: 50
+  currentHealth: 0
+  radius: 6
+  angle: 250
   playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2

@@ -19,12 +19,12 @@ public class CollisionDetection : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider trigger)
     {
-        if (other.tag == "Enemy" && wc.isAttacking)
+        if (trigger.tag == "Enemy" && wc.isAttacking)
         {
-            EnemyController.Instance.EnemyTakeDamage();
-            //Debug.Log(GameManager.gameManager.enemyHP.Health);
+            trigger.gameObject.GetComponent<EnemyController>().EnemyTakeDamage(6);
+            Debug.Log("collision detected");
         }
     }
 }
