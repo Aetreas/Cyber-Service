@@ -679,8 +679,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: How To Play
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
+  m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -105.54261, y: 0, z: -101.22987, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -819,15 +819,15 @@ MonoBehaviour:
     [upgrades] depending on where you go\nYour sensors will prevent you from leaving
     until you SCRAP every robot within the facility.\nAlternatively, you could also
     FIX them (be advised, Cybertech Industries does not provide credit in this scenario)\nBe
-    prepared to strike down every rogue robot with your wrench\n\n\t\t\t\t\t\t\t\t\t\t     
-    CONTROLS\n\t\t  Keyboard \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Controller\n\t\n     
-    WASD/Arrow Keys to move\t\t\t\t\t\t\t\t\t                 \tLeft Analog Stick
-    to move\n\t  Space Bar to Jump  \t\t\t\t\t\t\t\t\t\t\t\t\t\t\tA to Jump \n\t  
-    Left Click to Attack\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tB to Attack\n\t       E to
-    interact\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tX to Interact\n"
+    prepared to strike down every rogue robot with your wrench\n\n\t\t\t\t\t\t\t         
+    CONTROLS\n\t\t  Keyboard \t\t\t\t\t\t\t\t          \t Controller\n\t\n     WASD/Arrow
+    Keys to move\t\t\t\t\t\t\tLeft Analog Stick to move\n\t  Space Bar to Jump  \t\t\t\t\t\t\t\t\t  
+    A to Jump \n\t   Left Click to Attack\t\t\t\t\t\t                           B
+    to Attack\n\t       E to interact\t\t\t\t\t\t\t\t\tX to Interact\n\t\tQ to Scrap\t\t\t\t\t\t\t\t\t\t
+    Y to Scrap"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
+  m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -851,8 +851,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1081,8 +1081,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
+  m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1106,8 +1106,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

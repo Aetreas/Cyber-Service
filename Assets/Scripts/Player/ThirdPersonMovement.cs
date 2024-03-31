@@ -35,8 +35,11 @@ public class ThirdPersonMovement : MonoBehaviour
     private float originalStepOffset;
     [SerializeField] private Transform cameraTransform;
 
-    
-    
+    //test code for HP
+   // public int maxHP = 100;
+
+
+
 
 
     private void Awake()
@@ -204,6 +207,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public void PlayerTakeDamage(int dmg)
     {
         GameManager.gameManager.playerHP.DamageUnit(dmg);
+
     }
 
         public void PlayerHeal(int healing)

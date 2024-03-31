@@ -50,6 +50,7 @@ public class UnitHP
         if (currentHP > 0)
         {
             currentHP -= dmgAmount;
+            HealthScript.instance.SetValue(currentHP / (float)currentMaxHP);
         }
     }
 
