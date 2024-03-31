@@ -234,7 +234,7 @@ public class EnemyController : MonoBehaviour
         if(EnemyIsAttacking)
         {
             yield return new WaitForSeconds(0.5f);
-            pc.PlayerTakeDamage(20);
+            pc.PlayerTakeDamage(7);
             Debug.Log(GameManager.gameManager.playerHP.Health);
         }
     }

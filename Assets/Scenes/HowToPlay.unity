@@ -819,12 +819,13 @@ MonoBehaviour:
     [upgrades] depending on where you go\nYour sensors will prevent you from leaving
     until you SCRAP every robot within the facility.\nAlternatively, you could also
     FIX them (be advised, Cybertech Industries does not provide credit in this scenario)\nBe
-    prepared to strike down every rogue robot with your wrench\n\n\t\t\t\t\t\t\t         
-    CONTROLS\n\t\t  Keyboard \t\t\t\t\t\t\t\t          \t Controller\n\t\n     WASD/Arrow
-    Keys to move\t\t\t\t\t\t\tLeft Analog Stick to move\n\t  Space Bar to Jump  \t\t\t\t\t\t\t\t\t  
-    A to Jump \n\t   Left Click to Attack\t\t\t\t\t\t                           B
-    to Attack\n\t       E to interact\t\t\t\t\t\t\t\t\tX to Interact\n\t\tQ to Scrap\t\t\t\t\t\t\t\t\t\t
-    Y to Scrap"
+    prepared to strike down every rogue robot\n\n\t\t\t\t\t\t\t          CONTROLS\n\t\t 
+    Keyboard \t\t\t\t\t\t\t\t          \t Controller\n\t\n     WASD/Arrow Keys to
+    move\t\t\t\t\t\t\tLeft Analog Stick to move\n\t  Space Bar to Jump  \t\t\t\t\t\t\t\t\t  
+    A to Jump \n\t   Left Click to Attack\t\t\t\t\t\t                          RB
+    to Attack\n\t       E to interact\t\t\t\t\t\t\t\t\tY to Interact\n\t\tQ to Scrap\t\t\t\t\t\t\t\t\t\t
+    B to Scrap\n       Hold Shift to Use Hover (Level 1)\t\t\t\t\t\tHold X to use
+    Hover (Level 1)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
