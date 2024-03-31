@@ -164,6 +164,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             speedWalk = 6;
+            Patrolling();
         }
 
 
@@ -197,10 +198,12 @@ public class EnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
             FixScrapDialog.SetActive(false);
+            GetComponent<Animator>().SetBool("Idle", true);
             isFixed = true;
+            this.enabled = false;
         }
 
-        if (other.gameObject.tag == "Player" && scrapInteract == true && enemyDown == true)
+        if (other.gameObject.tag == "Player" && scrapInteract == true && enemyDown == true && isFixed == false)
         {
             SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
 
