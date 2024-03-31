@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WinScreen : MonoBehaviour
 {
-    public GameObject windialog;
+    public GameObject dialogBox;
     public GameObject InteractBox;
+    public GameObject ErrorBox;
+    public ThirdPersonMovement pc;
     public bool uiInput = false;
 
 
@@ -13,7 +15,8 @@ public class WinScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        windialog.SetActive(false);
+        dialogBox.SetActive(false);
+        ErrorBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class WinScreen : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         InteractBox.SetActive(false);
+        ErrorBox.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -44,19 +48,24 @@ public class WinScreen : MonoBehaviour
         {
             uiInput = true;
         }
-        if (uiInput == true)
+        if (uiInput == true && pc.totalbots == 8)
         {
-            OpenWin();
+            OpenMenu();
             InteractBox.SetActive(false);
+        }
+        else if (uiInput == true && pc.totalbots != 8)
+        {
+            uiInput = false;
+            ErrorBox.SetActive(true);
         }
         //Debug.Log ("Player is in the collider.");
     }
 
-    public void OpenWin()
+    public void OpenMenu()
     {
-        windialog.SetActive(true);
+        dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 0f;
         //ThirdPersonMovement.Instance.FreezePlayer();
+        Time.timeScale = 0f;
     }
-}
+    }

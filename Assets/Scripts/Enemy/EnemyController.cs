@@ -351,11 +351,13 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
         GetComponent<Animator>().SetTrigger("Walking");
+        GetComponent<Animator>().SetBool("Idle", false);
     }
     void Stop()
     {
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
+        GetComponent<Animator>().SetBool("Idle", true);
     }
     public void NextPoint()
     {

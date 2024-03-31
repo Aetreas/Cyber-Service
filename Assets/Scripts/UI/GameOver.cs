@@ -52,11 +52,13 @@ public class GameOver : MonoBehaviour
     {
         ScenesManager.Instance.LoadLevel1();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
     private void LoadHub()
     {
         ScenesManager.Instance.LoadHub();
         Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
     private void LoadMainMenu()
     {
