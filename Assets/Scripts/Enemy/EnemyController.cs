@@ -192,14 +192,16 @@ public class EnemyController : MonoBehaviour
         
         if (other.gameObject.tag == "Player" && fixInteract == true && enemyDown == true)
         {
-            //SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
+            SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
 
             fixInteract = false;
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
             FixScrapDialog.SetActive(false);
-            GetComponent<Animator>().SetBool("Idle", true);
+            GetComponent<Animator>().ResetTrigger("Walking");
+            GetComponent<Animator>().SetBool("FixedAnimation", true);
+            //GetComponent<Animator>().SetBool("Idle", true);
             GetComponent<Rigidbody>().isKinematic = true;
             isFixed = true;
             this.enabled = false;

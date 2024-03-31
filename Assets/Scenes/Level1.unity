@@ -55732,6 +55732,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1066264205}
     - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 369899765462bb44ba75ceaba351202b, type: 3}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: hoverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a8ed5e0c2f3218498013642af82c041, type: 3}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 247c7a1470f50cd4c818fd975cb4a91d, type: 3}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: miloAnimator
       value: 
       objectReference: {fileID: 1745473789}

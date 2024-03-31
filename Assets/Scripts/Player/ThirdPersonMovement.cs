@@ -35,6 +35,10 @@ public class ThirdPersonMovement : MonoBehaviour
     private float originalStepOffset;
     [SerializeField] private Transform cameraTransform;
 
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip hoverSound;
+
     //test code for HP
    // public int maxHP = 100;
 
@@ -92,6 +96,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
             {
                 ySpeed = jumpSpeed;
+                SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
                 miloAnimator.SetBool("isJumping", true);
                 isJumping = true;
                 jumpButtonPressedTime = null;
@@ -154,6 +159,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if (CanAttack)
             {
                 MeleeAttack();
+                SoundEffectScripts.instance.PlaySoundClip(attackSound, transform, 1f);
                 //Debug.Log("Attack Executed.");
             }
         }
@@ -217,6 +223,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
     {
+        SoundEffectScripts.instance.PlaySoundClip(hoverSound, transform, 1f);
         ySpeed = 0.5f;
         isHovering = true;
         Physics.gravity = new Vector3(0, 0, 0);
