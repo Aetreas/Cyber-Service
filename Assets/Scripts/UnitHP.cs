@@ -64,6 +64,7 @@ public class UnitHP
         {
             currentHP = currentMaxHP;
         }
+        HealthScript.instance.SetValue(currentHP / (float)currentMaxHP);
     }
 
 }

@@ -56,7 +56,10 @@ public class ThirdPersonMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
         miloAnimator = GetComponent<Animator>();
         originalStepOffset = controller.stepOffset;
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         loseUI.SetActive(false);
+        UnFreezePlayer();
     }
 
     // Update is called once per frame
@@ -185,6 +188,8 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             controller.enabled = false;
             loseUI.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
         }
 
     }

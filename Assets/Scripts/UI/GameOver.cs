@@ -46,7 +46,6 @@ public class GameOver : MonoBehaviour
     {
         gameOver.SetActive(true);
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
     }
     private void LoadLevel1()
     {

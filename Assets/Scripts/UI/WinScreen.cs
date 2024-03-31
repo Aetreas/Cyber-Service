@@ -7,6 +7,7 @@ public class WinScreen : MonoBehaviour
     public GameObject dialogBox;
     public GameObject InteractBox;
     public GameObject ErrorBox;
+    public GameObject QuotaBox;
     public ThirdPersonMovement pc;
     public bool uiInput = false;
 
@@ -17,6 +18,7 @@ public class WinScreen : MonoBehaviour
     {
         dialogBox.SetActive(false);
         ErrorBox.SetActive(false);
+        QuotaBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -65,7 +67,6 @@ public class WinScreen : MonoBehaviour
     {
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        //ThirdPersonMovement.Instance.FreezePlayer();
-        Time.timeScale = 0f;
+        ThirdPersonMovement.Instance.FreezePlayer();
     }
     }
