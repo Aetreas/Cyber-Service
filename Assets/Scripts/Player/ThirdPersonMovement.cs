@@ -21,10 +21,13 @@ public class ThirdPersonMovement : MonoBehaviour
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
     public float AttackCooldown = 1.0f;
+    public float DoubleJumpCooldown = 4.0f;
     public bool isJumping;
     public bool isHovering;
     public bool isGrounded;
     public bool hasHovering = false;
+    public bool hasDoubleJump = false;
+    public bool canDoubleJump;
     public bool CanAttack = true;
     public bool isAttacking = false;
     public int honor = 0;
@@ -98,12 +101,7 @@ public class ThirdPersonMovement : MonoBehaviour
             
             if (Time.time - jumpButtonPressedTime <= jumpButtonGracePeriod)
             {
-                ySpeed = jumpSpeed;
-                SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
-                miloAnimator.SetBool("isJumping", true);
-                isJumping = true;
-                jumpButtonPressedTime = null;
-                lastGroundedTime = null;
+                StartCoroutine(Jump());
             }
         }
         else
@@ -133,6 +131,11 @@ public class ThirdPersonMovement : MonoBehaviour
             ySpeed = -0.5f;
             isHovering = false;
             Physics.gravity = new Vector3(0, -19, 0);
+        }
+
+        if(Input.GetButtonDown("Jump") && isJumping && canDoubleJump && hasDoubleJump)
+        {
+            DoubleJump();
         }
 
 
@@ -226,6 +229,18 @@ public class ThirdPersonMovement : MonoBehaviour
         GameManager.gameManager.playerHP.HealUnit(healing);
     }
 
+    IEnumerator Jump()
+    {
+        ySpeed = jumpSpeed;
+        SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
+        miloAnimator.SetBool("isJumping", true);
+        isJumping = true;
+        jumpButtonPressedTime = null;
+        lastGroundedTime = null;
+        yield return new WaitForSeconds(0.1f);
+        canDoubleJump = true;
+    }
+    
     IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
     {
         SoundEffectScripts.instance.PlaySoundClip(hoverSound, transform, 1f);
@@ -241,9 +256,25 @@ public class ThirdPersonMovement : MonoBehaviour
         Physics.gravity = new Vector3(0, -19, 0);
     }
 
+    public void DoubleJump()
+    {
+        canDoubleJump = false;
+        ySpeed = jumpSpeed;
+        SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
+        miloAnimator.SetBool("isJumping", true);
+        isJumping = true;
+        jumpButtonPressedTime = null;
+        lastGroundedTime = null;
+    }
+
     public void HoverObtained()
     {
         hasHovering = true;
+    }
+
+    public void DoubleJumpObtained()
+    {
+        hasDoubleJump = true;
     }
 
     public void AddHonor()
@@ -296,6 +327,12 @@ public class ThirdPersonMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         totalbots += 1;
     }
+
+    //IEnumerator ResetDoubleJumpCooldown()
+    //{
+        //yield return new WaitForSeconds(DoubleJumpCooldown);
+        //canDoubleJump = true;
+    //}
 }
 
 
