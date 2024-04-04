@@ -12,11 +12,14 @@ public class ThirdPersonMovement : MonoBehaviour
     public Animator miloAnimator;
     public GameObject Melee;
     public GameObject loseUI;
+    public Vector3 direction;
     
 
     public float speed = 6f;
     public float rotationSpeed;
     public float jumpSpeed;
+    public float dashSpeed;
+    public float dashTime;
     [SerializeField] private float jumpButtonGracePeriod;
     private float? lastGroundedTime;
     private float? jumpButtonPressedTime;
@@ -28,6 +31,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool hasHovering = false;
     public bool hasDoubleJump = false;
     public bool canDoubleJump;
+    public bool hasDash;
+    public bool canDash;
     public bool CanAttack = true;
     public bool isAttacking = false;
     public int honor = 0;
@@ -138,6 +143,11 @@ public class ThirdPersonMovement : MonoBehaviour
             DoubleJump();
         }
 
+        if(Input.GetButtonDown("Ability") && isJumping && canDash && hasDash)
+        {
+            StartCoroutine(Dash(direction));
+        }
+
 
 
 
@@ -239,6 +249,7 @@ public class ThirdPersonMovement : MonoBehaviour
         lastGroundedTime = null;
         yield return new WaitForSeconds(0.1f);
         canDoubleJump = true;
+        canDash = true;
     }
     
     IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
@@ -267,6 +278,20 @@ public class ThirdPersonMovement : MonoBehaviour
         lastGroundedTime = null;
     }
 
+    IEnumerator Dash(Vector3 direction)
+    {
+        canDash = false;
+        float startTime = Time.time;
+
+        while(Time.time < startTime + dashTime)
+        {
+            controller.Move(direction * dashSpeed * Time.deltaTime);
+
+            yield return null;
+        }
+        Debug.Log("Dash");
+    }
+
     public void HoverObtained()
     {
         hasHovering = true;
@@ -275,6 +300,11 @@ public class ThirdPersonMovement : MonoBehaviour
     public void DoubleJumpObtained()
     {
         hasDoubleJump = true;
+    }
+
+    public void DashObtained()
+    {
+        hasDash = true;
     }
 
     public void AddHonor()
