@@ -31,7 +31,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool hasHovering = false;
     public bool hasDoubleJump = false;
     public bool canDoubleJump;
-    public bool hasDash;
+    public bool hasDash = false;
     public bool canDash;
     public bool CanAttack = true;
     public bool isAttacking = false;
@@ -362,6 +362,26 @@ public class ThirdPersonMovement : MonoBehaviour
     //{
         //yield return new WaitForSeconds(DoubleJumpCooldown);
         //canDoubleJump = true;
+    //}
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) //for "jump while on pad" behavior
+    {
+        if(hit.gameObject.tag == "JumpPad")
+        {
+            jumpSpeed = 30f;
+        }
+        else
+        {
+            jumpSpeed = 12f;
+        }
+    }
+
+    //private void OnTriggerEnter(Collider other) //for "halo man cannon" like behavior
+    //{
+        //if(other.gameObject.tag == "JumpPad")
+        //{
+            //ySpeed = 30f;
+        //}
     //}
 }
 
