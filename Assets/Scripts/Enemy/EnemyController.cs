@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     public ThirdPersonMovement pc;
     public GameObject FixScrapPrompt;
     public GameObject FixScrapDialog;
+    public GameObject hostileMesh;
     //public GameObject AttackCollider;
     
     public bool fixInteract = false;
@@ -193,7 +194,7 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "Player" && fixInteract == true && enemyDown == true)
         {
             SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
-
+            hostileMesh.SetActive(false);
             fixInteract = false;
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
