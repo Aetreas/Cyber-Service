@@ -24,7 +24,13 @@ public class CollisionDetection : MonoBehaviour
         if (trigger.tag == "Enemy" && wc.isAttacking)
         {
             trigger.gameObject.GetComponent<EnemyController>().EnemyTakeDamage(6);
-            Debug.Log("collision detected");
+            //Debug.Log("collision detected");
+        }
+
+        if (trigger.tag == "Boss" && wc.isAttacking)
+        {
+            trigger.gameObject.GetComponent<BossEnemyController>().EnemyTakeDamage(6);
+
         }
     }
 }

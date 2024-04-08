@@ -342,6 +342,7 @@ MonoBehaviour:
   pc: {fileID: 0}
   FixScrapPrompt: {fileID: 2285358594142329076}
   FixScrapDialog: {fileID: 0}
+  hostileMesh: {fileID: 0}
   fixInteract: 0
   scrapInteract: 0
   enemyDown: 0
