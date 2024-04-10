@@ -37,6 +37,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isAttacking = false;
     public int honor = 0;
     public int totalbots = 0;
+    public int scrappedBots = 0;
+    public int fixedBots = 0;
     
     private Animator miloAnim;
     public float ySpeed;
@@ -318,6 +320,16 @@ public class ThirdPersonMovement : MonoBehaviour
         StartCoroutine(TotalBotDelay());
     }
 
+    public void AddScrappedBots()
+    {
+        StartCoroutine(BotsScrappedDelay());
+    }
+
+    public void AddFixedBots()
+    {
+        StartCoroutine(BotsFixedDelay());
+    }
+
     public void MeleeAttack()
     {
         isAttacking = true;
@@ -356,6 +368,18 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         totalbots += 1;
+    }
+
+    IEnumerator BotsScrappedDelay()
+    {
+        yield return new WaitForSeconds(1);
+        scrappedBots += 1;
+    }
+
+    IEnumerator BotsFixedDelay()
+    {
+        yield return new WaitForSeconds(1);
+        fixedBots += 1;
     }
 
     //IEnumerator ResetDoubleJumpCooldown()
