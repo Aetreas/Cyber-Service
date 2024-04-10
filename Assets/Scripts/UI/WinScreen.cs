@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class WinScreen : MonoBehaviour
 {
+    public static WinScreen Instance;
     public GameObject dialogBox;
     public GameObject InteractBox;
     public GameObject ErrorBox;
-    public GameObject QuotaBox;
+    public GameObject QuotaFixBox;
+    public GameObject QuotaScrapBox;
     public ThirdPersonMovement pc;
     public bool uiInput = false;
 
 
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         dialogBox.SetActive(false);
         ErrorBox.SetActive(false);
-        QuotaBox.SetActive(false);
+        QuotaFixBox.SetActive(false);
+        QuotaScrapBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,6 +60,7 @@ public class WinScreen : MonoBehaviour
         if (uiInput == true && pc.totalbots == 8)
         {
             OpenMenu();
+            ThirdPersonMovement.Instance.LevelEndTrigger();
             InteractBox.SetActive(false);
         }
         else if (uiInput == true && pc.totalbots != 8)
@@ -68,5 +76,14 @@ public class WinScreen : MonoBehaviour
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         ThirdPersonMovement.Instance.FreezePlayer();
+    }
+    public void FixEnding()
+    {
+        QuotaFixBox.SetActive(true);
+    }
+    public void ScrapEnding()
+    {
+        QuotaScrapBox.SetActive(true);
+        CurrencySystem.instance.CurrencyReward();
     }
     }

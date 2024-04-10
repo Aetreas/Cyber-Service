@@ -8,6 +8,7 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject levelSelect;
 
     [SerializeField] Button _levelone;
+    [SerializeField] Button _leveltwo;
     [SerializeField] Button _levelthree;
     [SerializeField] Button _tutorial;
 
@@ -16,6 +17,7 @@ public class LevelSelectMenu : MonoBehaviour
     {
         levelSelect.SetActive(false);
         _levelone.onClick.AddListener(LoadLevel1);
+        _leveltwo.onClick.AddListener(LoadLevel2);
         _levelthree.onClick.AddListener(LoadLevel3);
         _tutorial.onClick.AddListener(LoadTut);
     }
@@ -44,6 +46,12 @@ public class LevelSelectMenu : MonoBehaviour
     private void LoadLevel1()
     {
         ScenesManager.Instance.LoadLevel1();
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+    }
+    private void LoadLevel2()
+    {
+        ScenesManager.Instance.LoadLevel2();
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
     }

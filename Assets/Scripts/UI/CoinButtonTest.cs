@@ -22,12 +22,12 @@ public class AddTest : MonoBehaviour
 
     public void AddCoin()
     {
-        CurrencySystem.coins += 50;
+        CurrencySystem.coins += 100;
         CurrencySystem.UpdateCoins();
     }
     public void RemoveCoin()
     {
-        CurrencySystem.coins -= 50;
+        CurrencySystem.coins -= 100;
         CurrencySystem.UpdateCoins();
     }
 }

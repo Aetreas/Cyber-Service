@@ -407,6 +407,17 @@ public class ThirdPersonMovement : MonoBehaviour
             //ySpeed = 30f;
         //}
     //}
+    public void LevelEndTrigger()
+    {
+        if (scrappedBots >= fixedBots)
+        {
+            WinScreen.Instance.ScrapEnding();
+        }
+        else if (scrappedBots < fixedBots)
+        {
+            WinScreen.Instance.FixEnding();
+        }
+    }
 }
 
 

@@ -19,7 +19,7 @@ public class CurrencyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string[] temp = text.text.Split("$");
-        text.text = temp[0] + "$" + CurrencySystem.coins;
+        string[] temp = text.text.Split("  : ");
+        text.text = temp[0] + "  : " + CurrencySystem.coins;
     }
 }

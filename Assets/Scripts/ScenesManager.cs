@@ -18,6 +18,7 @@ public class ScenesManager : MonoBehaviour
         SampleScene,
         Tutorial,
         Level1,
+        Level2,
         Level3,
         HowToPlay
     }
@@ -37,6 +38,10 @@ public class ScenesManager : MonoBehaviour
     public void LoadLevel1()
     {
         SceneManager.LoadScene(Scene.Level1.ToString());
+    }
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene(Scene.Level2.ToString());
     }
 
     public void LoadLevel3()

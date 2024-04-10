@@ -200,6 +200,7 @@ public class EnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
             ThirdPersonMovement.Instance.AddFixedBots();
+            CurrencySystem.instance.AddCurrencyFix();
             FixScrapDialog.SetActive(false);
             GetComponent<Animator>().ResetTrigger("Walking");
             GetComponent<Animator>().SetBool("FixedAnimation", true);
@@ -218,6 +219,7 @@ public class EnemyController : MonoBehaviour
             FixScrapDialog.SetActive(false);
             ThirdPersonMovement.Instance.AddTotalBots();
             ThirdPersonMovement.Instance.AddScrappedBots();
+            CurrencySystem.instance.AddCurrencyScrap();
         }
     }
 
