@@ -199,6 +199,7 @@ public class EnemyController : MonoBehaviour
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
+            ThirdPersonMovement.Instance.AddFixedBots();
             FixScrapDialog.SetActive(false);
             GetComponent<Animator>().ResetTrigger("Walking");
             GetComponent<Animator>().SetBool("FixedAnimation", true);
@@ -216,6 +217,7 @@ public class EnemyController : MonoBehaviour
             Destroy(enemyObj);
             FixScrapDialog.SetActive(false);
             ThirdPersonMovement.Instance.AddTotalBots();
+            ThirdPersonMovement.Instance.AddScrappedBots();
         }
     }
 
