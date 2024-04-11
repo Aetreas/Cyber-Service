@@ -35,6 +35,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool canDash;
     public bool CanAttack = true;
     public bool isAttacking = false;
+    public bool scrapEndHasRun = false;
+    public bool fixEndHasRun = false;
     public int honor = 0;
     public int totalbots = 0;
     public int scrappedBots = 0;
@@ -410,13 +412,15 @@ public class ThirdPersonMovement : MonoBehaviour
     
     public void LevelEndTrigger()
     {
-        if (scrappedBots >= fixedBots)
+        if (scrappedBots >= fixedBots && scrapEndHasRun == false)
         {
             WinScreen.Instance.ScrapEnding();
+            scrapEndHasRun = true;
         }
-        else if (scrappedBots < fixedBots)
+        else if (scrappedBots < fixedBots && fixEndHasRun == false)
         {
             WinScreen.Instance.FixEnding();
+            fixEndHasRun = true;
         }
     }
 }
