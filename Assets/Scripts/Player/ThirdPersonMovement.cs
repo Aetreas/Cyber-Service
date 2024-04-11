@@ -388,25 +388,26 @@ public class ThirdPersonMovement : MonoBehaviour
         //canDoubleJump = true;
     //}
 
-    private void OnControllerColliderHit(ControllerColliderHit hit) //for "jump while on pad" behavior
-    {
-        if(hit.gameObject.tag == "JumpPad")
-        {
-            jumpSpeed = 30f;
-        }
-        else
-        {
-            jumpSpeed = 12f;
-        }
-    }
-
-    //private void OnTriggerEnter(Collider other) //for "halo man cannon" like behavior
+    //private void OnControllerColliderHit(ControllerColliderHit hit) //for "jump while on pad" behavior
     //{
-        //if(other.gameObject.tag == "JumpPad")
+        //if(hit.gameObject.tag == "JumpPad")
         //{
-            //ySpeed = 30f;
+            //jumpSpeed = 30f;
+        //}
+        //else
+        //{
+            //jumpSpeed = 12f;
         //}
     //}
+
+    private void OnTriggerEnter(Collider other) //for "halo man cannon" like behavior
+    {
+        if(other.gameObject.tag == "JumpPad")
+        {
+            ySpeed = 30f;
+        }
+    }
+    
     public void LevelEndTrigger()
     {
         if (scrappedBots >= fixedBots)

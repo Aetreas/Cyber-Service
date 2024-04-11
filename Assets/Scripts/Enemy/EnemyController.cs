@@ -207,6 +207,7 @@ public class EnemyController : MonoBehaviour
             //GetComponent<Animator>().SetBool("Idle", true);
             GetComponent<Rigidbody>().isKinematic = true;
             isFixed = true;
+            GetComponent<FixedIdle>().enabled = true;
             this.enabled = false;
         }
 
