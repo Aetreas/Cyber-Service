@@ -6,7 +6,18 @@ public class CosmeticScript : MonoBehaviour
 {
     public static CosmeticScript inst;
 
-    public GameObject cosmetic;
+    public GameObject cosmetic1;
+    public GameObject cosmetic2;
+    public GameObject cosmetic3;
+    public GameObject cosmetic4;
+    public GameObject cosmetic5;
+    public GameObject cosmetic6;
+    public bool BoughtItem1 = false;
+    public bool BoughtItem2 = false;
+    public bool BoughtItem3 = false;
+    public bool BoughtItem4 = false;
+    public bool BoughtItem5 = false;
+    public bool BoughtItem6 = false;
 
     private void Awake()
     {
@@ -15,7 +26,30 @@ public class CosmeticScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cosmetic.SetActive(false);
+        if (BoughtItem1 == false)
+        {
+            cosmetic1.SetActive(false);
+        }
+        if (BoughtItem2 == false)
+        {
+            cosmetic2.SetActive(false);
+        }
+        if (BoughtItem3 == false)
+        {
+            cosmetic3.SetActive(false);
+        }
+        if (BoughtItem4 == false)
+        {
+            cosmetic4.SetActive(false);
+        }
+        if (BoughtItem5 == false)
+        {
+            cosmetic5.SetActive(false);
+        }
+        if (BoughtItem6 == false)
+        {
+            cosmetic6.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -23,8 +57,34 @@ public class CosmeticScript : MonoBehaviour
     {
 
     }
-    public void ActivateCosmetic()
+    public void ActivateCosmetic1()
     {
-        cosmetic.SetActive(true);
+        cosmetic1.SetActive(true);
+        BoughtItem1 = true;
+    }
+    public void ActivateCosmetic2()
+    {
+        cosmetic2.SetActive(true);
+        BoughtItem2 = true;
+    }
+    public void ActivateCosmetic3()
+    {
+        cosmetic3.SetActive(true);
+        BoughtItem3 = true;
+    }
+    public void ActivateCosmetic4()
+    {
+        cosmetic4.SetActive(true);
+        BoughtItem4 = true;
+    }
+    public void ActivateCosmetic5()
+    {
+        cosmetic5.SetActive(true);
+        BoughtItem5 = true;
+    }
+    public void ActivateCosmetic6()
+    {
+        cosmetic6.SetActive(true);
+        BoughtItem6 = true;
     }
 }

@@ -38,7 +38,7 @@ public class CurrencyBehavior : MonoBehaviour
         {
             scrapcurrency -= itemPrice;
             scrapText.text = scrapcurrency.ToString();
-            CosmeticScript.inst.ActivateCosmetic();
+            CosmeticScript.inst.ActivateCosmetic1();
         }
     }
 }
