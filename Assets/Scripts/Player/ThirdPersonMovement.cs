@@ -246,7 +246,7 @@ public class ThirdPersonMovement : MonoBehaviour
     IEnumerator Jump()
     {
         ySpeed = jumpSpeed;
-        SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
+        //Debug.Log("Jump");
         miloAnimator.SetBool("isJumping", true);
         isJumping = true;
         jumpButtonPressedTime = null;
@@ -254,6 +254,7 @@ public class ThirdPersonMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         canDoubleJump = true;
         canDash = true;
+        SoundEffectScripts.instance.PlaySoundClip(jumpSound, transform, 1f);
     }
     
     IEnumerator Hovering()//to do: implement cooldown so if player reaches ground early, they cannot hover until coroutine ends.
