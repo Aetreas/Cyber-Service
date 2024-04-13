@@ -58,13 +58,13 @@ public class WinScreen2 : MonoBehaviour
         {
             uiInput = true;
         }
-        if (uiInput == true && pc.totalbots == 9)
+        if (uiInput == true && pc.totalbots == 10)
         {
             OpenMenu();
             ThirdPersonMovement.Instance.LevelEndTrigger();
             InteractBox.SetActive(false);
         }
-        else if (uiInput == true && pc.totalbots != 9)
+        else if (uiInput == true && pc.totalbots != 10)
         {
             uiInput = false;
             ErrorBox.SetActive(true);

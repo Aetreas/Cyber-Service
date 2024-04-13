@@ -13,6 +13,7 @@ public class SwitchPuzzle : MonoBehaviour
     public bool fixInput1 = false;
     public bool fixInput2 = false;
     public bool fixInput3 = false;
+    public bool fixInput4 = false;
     public bool gateRemain = true;
 
 
@@ -64,7 +65,7 @@ public class SwitchPuzzle : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact"))
         {
-            if (fixInput1 == true && fixInput2 == true)
+            if (fixInput1 == true && fixInput2 == true && fixInput3 == true && fixInput4 == true)
             {
                 OpenGate();
                 FixDialogueBox.SetActive(false);
@@ -95,6 +96,10 @@ public class SwitchPuzzle : MonoBehaviour
     public void ActivatedSwitch3()
     {
         fixInput3 = true;
+    }
+    public void ActivatedSwitch4()
+    {
+        fixInput4 = true;
     }
     public void DestroyGate()
     {
