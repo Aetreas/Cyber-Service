@@ -4991,6 +4991,8 @@ MonoBehaviour:
   - Instructions will be provided in the introductory message
   - Cybertech appreciates your attention during this Orientation
   - Good Luck!
+  - '- - -'
+  - Press Escape to boot up the Pause Menu and go back to Main Menu
   textSpeed: 0.05
 --- !u!114 &1056284993
 MonoBehaviour:

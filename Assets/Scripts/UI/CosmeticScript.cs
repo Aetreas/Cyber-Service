@@ -12,12 +12,12 @@ public class CosmeticScript : MonoBehaviour
     public GameObject cosmetic4;
     public GameObject cosmetic5;
     public GameObject cosmetic6;
-    public bool BoughtItem1 = false;
-    public bool BoughtItem2 = false;
-    public bool BoughtItem3 = false;
-    public bool BoughtItem4 = false;
-    public bool BoughtItem5 = false;
-    public bool BoughtItem6 = false;
+    public static bool BoughtItem1 { get; set; }
+    public static bool BoughtItem2 { get; set; }
+    public static bool BoughtItem3 { get; set; }
+    public static bool BoughtItem4 { get; set; }
+    public static bool BoughtItem5 { get; set; }
+    public static bool BoughtItem6 { get; set; }
 
     private void Awake()
     {
