@@ -407,7 +407,9 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if(other.gameObject.tag == "JumpPad")
         {
-            ySpeed = 30f;
+        
+            ySpeed = 80f;
+            //Debug.Log("JumpPad");
         }
     }
     
