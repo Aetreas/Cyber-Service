@@ -6,9 +6,9 @@ public class LaunchPad : MonoBehaviour
 {
 
     public static LaunchPad Instance;
-    public Transform[] waypoint;
-    public int targetPoint;
-    public float speed = 15f;
+    [SerializeField] Transform tp;
+    [SerializeField] GameObject player;
+    public GameObject dialogueBox;
     //public bool input;
 
     void Awake()
@@ -19,7 +19,7 @@ public class LaunchPad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPoint = 0;
+        
     }
 
     // Update is called once per frame
@@ -30,11 +30,28 @@ public class LaunchPad : MonoBehaviour
 
     public void LaunchPadMove()
     {
-    
+        StartCoroutine(Teleport());
     }
 
-    //IEnumerator Launch()
-    //{
-    
-    //}
+    IEnumerator Teleport()
+    {
+        GetComponent<CharacterController>().enabled  = false;
+        
+        yield return new WaitForSeconds(0.5f);
+        
+        player.transform.position = new Vector3(
+
+           tp.transform.position.x,
+
+           tp.transform.position.y,
+
+           tp.transform.position.z
+
+       );
+
+       GetComponent<CharacterController>().enabled = true;
+       TPPromot.Instance.StopDialogue();
+
+       Debug.Log("TP");
+    }
 }

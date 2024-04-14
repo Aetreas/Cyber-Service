@@ -12,7 +12,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Animator miloAnimator;
     public GameObject Melee;
     public GameObject loseUI;
-    public GameObject player;
+    //public GameObject player;
     public Vector3 direction;
     
 
@@ -20,7 +20,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float rotationSpeed;
     public float jumpSpeed;
     //public float jumpPadSpeed;
-    //public float launchSpeed;
+    public float launchSpeed;
     //public float launchTime;
     //private float y;
     public float dashSpeed;
@@ -431,9 +431,13 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider tag)
     {
+        
+        
         if (Input.GetButtonDown("Interact") && tag.gameObject.tag == "JumpPad")
         {
-            //LaunchPad.Instance.LaunchPadMove();
+            //controller.Move(direction * launchSpeed * Time.deltaTime);
+            //ySpeed = 50;
+            LaunchPad.Instance.LaunchPadMove();
         }
     }
     
