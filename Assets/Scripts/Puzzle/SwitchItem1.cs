@@ -20,6 +20,13 @@ public class SwitchItem1 : MonoBehaviour
             FixDialogueBox.SetActive(true);
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (interact == false)
+        {
+            FixDialogueBox.SetActive(false);
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("Interact"))
