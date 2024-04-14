@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - FixScrap
   - JumpPad
+  - Boss
+  - KillBox
   layers:
   - Default
   - TransparentFX

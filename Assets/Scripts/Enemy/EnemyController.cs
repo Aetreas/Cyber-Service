@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public GameObject FixScrapPrompt;
     public GameObject FixScrapDialog;
     public GameObject hostileMesh;
+    public GameObject fixedMesh;
     //public GameObject AttackCollider;
     
     public bool fixInteract = false;
@@ -77,6 +78,8 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        hostileMesh.SetActive(true);
+        fixedMesh.SetActive(false);
         FixScrapPrompt.SetActive(false);
         FixScrapDialog.SetActive(false);
         //AttackCollider.SetActive(false);
@@ -195,6 +198,7 @@ public class EnemyController : MonoBehaviour
         {
             SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
             hostileMesh.SetActive(false);
+            fixedMesh.SetActive(true);
             fixInteract = false;
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
@@ -202,7 +206,7 @@ public class EnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddFixedBots();
             CurrencySystem.instance.AddCurrencyFix();
             FixScrapDialog.SetActive(false);
-            GetComponent<Animator>().ResetTrigger("Walking");
+            GetComponent<Animator>().SetBool("Idle", false);
             GetComponent<Animator>().SetBool("FixedAnimation", true);
             //GetComponent<Animator>().SetBool("Idle", true);
             GetComponent<Rigidbody>().isKinematic = true;

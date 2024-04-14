@@ -7,17 +7,22 @@ using UnityEngine.EventSystems;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public static ThirdPersonMovement Instance;
-
+    
     public CharacterController controller;
     public Animator miloAnimator;
     public GameObject Melee;
     public GameObject loseUI;
+    public GameObject player;
     public Vector3 direction;
     
 
     public float speed = 6f;
     public float rotationSpeed;
     public float jumpSpeed;
+    //public float jumpPadSpeed;
+    //public float launchSpeed;
+    //public float launchTime;
+    //private float y;
     public float dashSpeed;
     public float dashTime;
     [SerializeField] private float jumpButtonGracePeriod;
@@ -65,6 +70,7 @@ public class ThirdPersonMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //y = transform.position.y;
         controller = GetComponent<CharacterController>();
         miloAnimator = GetComponent<Animator>();
         originalStepOffset = controller.stepOffset;
@@ -296,7 +302,9 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         Debug.Log("Dash");
     }
+    
 
+    
     public void HoverObtained()
     {
         hasHovering = true;
@@ -405,11 +413,27 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) //for "halo man cannon" like behavior
     {
-        if(other.gameObject.tag == "JumpPad")
-        {
-        
-            ySpeed = 80f;
+        //if(other.gameObject.tag == "JumpPad")
+        //{
+            //StartCoroutine(JumpPad(direction));
+            //ySpeed = 50f;
             //Debug.Log("JumpPad");
+        //}
+
+        if (other.gameObject.tag == "KillBox")
+        {
+            controller.enabled = false;
+            loseUI.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    private void OnTriggerStay(Collider tag)
+    {
+        if (Input.GetButtonDown("Interact") && tag.gameObject.tag == "JumpPad")
+        {
+            //LaunchPad.Instance.LaunchPadMove();
         }
     }
     
