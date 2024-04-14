@@ -56,6 +56,10 @@ public class SwitchPuzzle2 : MonoBehaviour
         {
             FixDialogueBox.SetActive(true);
         }
+        else
+        {
+            FixDialogueBox.SetActive(false);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
