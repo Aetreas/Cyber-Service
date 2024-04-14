@@ -55,6 +55,7 @@ public class PauseMenu : MonoBehaviour
     {
         ScenesManager.Instance.LoadMainMenu();
         Time.timeScale = 1f;
+        Debug.Log("Going to menu");
     }
 
     private void QuitGame()

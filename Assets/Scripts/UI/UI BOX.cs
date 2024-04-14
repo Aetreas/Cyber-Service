@@ -32,7 +32,7 @@ public class UIBOX : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             uiInput = false;
-            Time.timeScale = 1f;
+            Time.timeScale = 1;
         }
     }
 
@@ -50,6 +50,7 @@ public class UIBOX : MonoBehaviour
         if (Input.GetButtonDown("Interact"))
         {
             uiInput = true;
+            Time.timeScale = 0;
         }
         if (uiInput == true)
         {
@@ -68,13 +69,11 @@ public class UIBOX : MonoBehaviour
     {
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        ThirdPersonMovement.Instance.FreezePlayer();
     }
 
     public void CloseMenu()
     {
         dialogBox.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        ThirdPersonMovement.Instance.UnFreezePlayer();
     }
 }

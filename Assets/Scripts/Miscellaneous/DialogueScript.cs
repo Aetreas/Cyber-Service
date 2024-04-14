@@ -31,7 +31,6 @@ public class DialogueScript : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
-                ThirdPersonMovement.Instance.UnFreezePlayer();
             }
         }
     }
@@ -64,6 +63,7 @@ public class DialogueScript : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+           // ThirdPersonMovement.Instance.UnFreezePlayer();
         }
     }
 }
