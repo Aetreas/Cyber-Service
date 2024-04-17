@@ -9,6 +9,7 @@ public class BossEnemyController : MonoBehaviour
     public GameObject FixScrapPrompt;
     public GameObject FixScrapDialog;
     public GameObject hostileMesh;
+    public GameObject fixedMesh;
     //public GameObject AttackCollider;
     
     public bool fixInteract = false;
@@ -77,6 +78,8 @@ public class BossEnemyController : MonoBehaviour
         currentHealth = maxHealth;
         FixScrapPrompt.SetActive(false);
         FixScrapDialog.SetActive(false);
+        hostileMesh.SetActive(true);
+        fixedMesh.SetActive(false);
         //AttackCollider.SetActive(false);
         //Jan's Variable Initializing
         m_PlayerPosition = Vector3.zero;
@@ -193,6 +196,7 @@ public class BossEnemyController : MonoBehaviour
         {
             SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
             hostileMesh.SetActive(false);
+            fixedMesh.SetActive(true);
             fixInteract = false;
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
