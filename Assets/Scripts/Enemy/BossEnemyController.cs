@@ -202,11 +202,12 @@ public class BossEnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
             FixScrapDialog.SetActive(false);
-            GetComponent<Animator>().ResetTrigger("Walking");
+            GetComponent<Animator>().SetBool("Idle", false);
             GetComponent<Animator>().SetBool("FixedAnimation", true);
             //GetComponent<Animator>().SetBool("Idle", true);
             GetComponent<Rigidbody>().isKinematic = true;
             isFixed = true;
+            GetComponent<FixedIdle>().enabled = true;
             this.enabled = false;
         }
 
