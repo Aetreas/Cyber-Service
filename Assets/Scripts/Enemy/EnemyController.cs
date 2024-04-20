@@ -49,8 +49,10 @@ public class EnemyController : MonoBehaviour
     public float meshResolution = 1f;
     public int edgeIterations = 4;
     public float edgeDistance = 0.5f;
+    public float rotationSpeed;
 
     public Transform[] waypoints;
+    public Transform playerPos;
     int m_CurrentWaypointIndex;
 
     Vector3 playerLastPosition = Vector3.zero;
@@ -100,6 +102,7 @@ public class EnemyController : MonoBehaviour
 
         //FOV attack detection
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(AttackFOVRoutine());
     }
 
@@ -159,6 +162,9 @@ public class EnemyController : MonoBehaviour
 
         if (attackRange == true)
         {
+            var targetRotation = Quaternion.LookRotation(playerPos.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
             if(EnemyCanAttack == true)
             {
                 speedWalk = 0;
