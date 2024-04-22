@@ -184,7 +184,7 @@ public class EnemyController : MonoBehaviour
 
     public void EnemyTakeDamage(int amount)
     {
-        SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
+        //SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
         currentHealth -= amount;
         Debug.Log(currentHealth);
     }
@@ -202,6 +202,7 @@ public class EnemyController : MonoBehaviour
         
         if (other.gameObject.tag == "Player" && fixInteract == true && enemyDown == true)
         {
+            gameObject.tag = "Untagged";
             SoundEffectScripts.instance.PlaySoundClip(fixsoundclip, transform, 1f);
             hostileMesh.SetActive(false);
             fixedMesh.SetActive(true);

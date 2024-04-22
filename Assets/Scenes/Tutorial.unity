@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: ec
       value: 
       objectReference: {fileID: 2679929337140951537, guid: a0c6992d3a2ab3841829641e880f3e14, type: 3}
+    - target: {fileID: 1366521044651890562, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: damagesoundclip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c4edeae49ac6e1469c364926d7297a1, type: 3}
     - target: {fileID: 1502839165911050138, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: m_Layer
       value: 7
