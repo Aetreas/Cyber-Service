@@ -58,13 +58,13 @@ public class WinScreen : MonoBehaviour
         {
             uiInput = true;
         }
-        if (uiInput == true && pc.totalbots == 8)
+        if (uiInput == true && EnemyCounter.Instance.EnemyCount == 0)
         {
             OpenMenu();
             ThirdPersonMovement.Instance.LevelEndTrigger();
             InteractBox.SetActive(false);
         }
-        else if (uiInput == true && pc.totalbots != 8)
+        else if (uiInput == true && EnemyCounter.Instance.EnemyCount != 0)
         {
             uiInput = false;
             ErrorBox.SetActive(true);
@@ -81,10 +81,11 @@ public class WinScreen : MonoBehaviour
     public void FixEnding()
     {
         QuotaFixBox.SetActive(true);
+        CurrencySystem.instance.FixReward();
     }
     public void ScrapEnding()
     {
         QuotaScrapBox.SetActive(true);
-        CurrencySystem.instance.CurrencyReward();
+        CurrencySystem.instance.ScrapReward();
     }
     }

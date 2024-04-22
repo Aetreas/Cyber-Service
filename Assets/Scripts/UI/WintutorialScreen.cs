@@ -9,8 +9,6 @@ public class WintutorialScreen : MonoBehaviour
     public GameObject dialogBox;
     public GameObject InteractBox;
     public GameObject ErrorBox;
-    public GameObject QuotaFixBox;
-    public GameObject QuotaScrapBox;
     public ThirdPersonMovement pc;
     public bool uiInput = false;
 
@@ -25,8 +23,6 @@ public class WintutorialScreen : MonoBehaviour
     {
         dialogBox.SetActive(false);
         ErrorBox.SetActive(false);
-        QuotaFixBox.SetActive(false);
-        QuotaScrapBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,15 +73,6 @@ public class WintutorialScreen : MonoBehaviour
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         ThirdPersonMovement.Instance.FreezePlayer();
-    }
-    public void FixEnding()
-    {
-        QuotaFixBox.SetActive(true);
-    }
-    public void ScrapEnding()
-    {
-        QuotaScrapBox.SetActive(true);
-    //    CurrencySystem.instance.CurrencyReward();
     }
 }
 

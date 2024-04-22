@@ -212,6 +212,7 @@ public class EnemyController : MonoBehaviour
             ThirdPersonMovement.Instance.AddTotalBots();
             ThirdPersonMovement.Instance.AddFixedBots();
             CurrencySystem.instance.AddCurrencyFix();
+            EnemyCounter.Instance.EnemiesLeft();
             FixScrapDialog.SetActive(false);
             GetComponent<Animator>().SetBool("Idle", false);
             GetComponent<Animator>().SetBool("FixedAnimation", true);
@@ -225,8 +226,9 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.tag == "Player" && scrapInteract == true && enemyDown == true && isFixed == false)
         {
             SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
-
+            EnemyCounter.Instance.EnemiesLeft();
             scrapInteract = false;
+
             Destroy(enemyObj);
             FixScrapDialog.SetActive(false);
             ThirdPersonMovement.Instance.AddTotalBots();

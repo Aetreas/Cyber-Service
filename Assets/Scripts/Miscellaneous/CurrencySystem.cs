@@ -103,9 +103,14 @@ public class CurrencySystem : MonoBehaviour
             CosmeticScript.inst.ActivateCosmetic6();
         }
     }
-    public void CurrencyReward()
+    public void ScrapReward()
     {
         coins += 500;
+        UpdateCoins();
+    }
+    public void FixReward()
+    {
+        coins += 2000;
         UpdateCoins();
     }
 }
