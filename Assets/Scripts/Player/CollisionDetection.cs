@@ -23,14 +23,14 @@ public class CollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider trigger)
     {
-        if(trigger.tag == "Enemy" && !soundPlayed)
+        if(trigger.tag == "Enemy" && !soundPlayed && wc.isAttacking)
         {
             SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
             soundPlayed = true;
             StartCoroutine(ResetAttackSound());
         }
 
-        if(trigger.tag == "Boss" && !soundPlayed)
+        if(trigger.tag == "Boss" && !soundPlayed && wc.isAttacking)
         {
             SoundEffectScripts.instance.PlaySoundClip(damagesoundclip, transform, 1f);
             soundPlayed = true;

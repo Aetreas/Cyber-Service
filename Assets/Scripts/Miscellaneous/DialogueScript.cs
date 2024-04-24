@@ -6,6 +6,8 @@ using TMPro;
 public class DialogueScript : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+    public PauseMenu pauseScript;
+    public ThirdPersonMovement pc;
     public string[] lines;
     public float textSpeed;
 
@@ -13,7 +15,6 @@ public class DialogueScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ThirdPersonMovement.Instance.FreezePlayer();
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -56,14 +57,19 @@ public class DialogueScript : MonoBehaviour
     {
         if (index < lines.Length - 1) 
         {
+            pc.controller.enabled = false;
+            pauseScript.isPaused = true;
+            //ThirdPersonMovement.Instance.FreezePlayer();
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
         {
+            //ThirdPersonMovement.Instance.UnFreezePlayer();
+            pc.controller.enabled = true;
+            pauseScript.isPaused = false;
             gameObject.SetActive(false);
-           // ThirdPersonMovement.Instance.UnFreezePlayer();
         }
     }
 }

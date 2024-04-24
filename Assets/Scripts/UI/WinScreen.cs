@@ -13,6 +13,7 @@ public class WinScreen : MonoBehaviour
     public GameObject QuotaScrapBox;
     public GameObject virtualCursor;
     public ThirdPersonMovement pc;
+    public PauseMenu pauseScript;
     public bool uiInput = false;
 
 
@@ -77,6 +78,7 @@ public class WinScreen : MonoBehaviour
     {
         dialogBox.SetActive(true);
         virtualCursor.SetActive(true);
+        pauseScript.isPaused = true;
         Cursor.lockState = CursorLockMode.None;
         ThirdPersonMovement.Instance.FreezePlayer();
     }

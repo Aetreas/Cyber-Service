@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     public GameObject Melee;
+    public PauseMenu pauseScript;
     public bool CanAttack = true;
     public float AttackCooldown = 1.0f;
     //public AudioClip AttackSound;
@@ -12,7 +13,7 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Melee"))
+        if(Input.GetButtonDown("Melee") && pauseScript.isPaused == false)
         {
             if (CanAttack)
             {

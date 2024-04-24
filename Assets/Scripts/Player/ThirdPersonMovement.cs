@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public static ThirdPersonMovement Instance;
+    public PauseMenu pauseScript;
     
     public CharacterController controller;
     public Animator miloAnimator;
@@ -100,7 +101,7 @@ public class ThirdPersonMovement : MonoBehaviour
             lastGroundedTime = Time.time;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && pauseScript.isPaused == false)
         {
             jumpButtonPressedTime = Time.time;
         }
@@ -169,7 +170,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
 
-        if (direction != Vector3.zero)//checks movement and smooth rotation
+        if (direction != Vector3.zero && pauseScript.isPaused == false)//checks movement and smooth rotation
         {
             miloAnimator.SetBool("isMoving", true);
             Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
@@ -181,7 +182,7 @@ public class ThirdPersonMovement : MonoBehaviour
             miloAnimator.SetBool("isMoving", false);
         }
 
-        if(Input.GetButtonDown("Melee") && isGrounded)
+        if(Input.GetButtonDown("Melee") && isGrounded && pauseScript.isPaused == false)
         {
             if (CanAttack)
             {
@@ -212,6 +213,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             //GameOver.Instance.GameOverMenu();
             controller.enabled = false;
+            pauseScript.isPaused = true;
             loseUI.SetActive(true);
             virtualCursor.SetActive(true);
             Time.timeScale = 0f;
@@ -238,7 +240,7 @@ public class ThirdPersonMovement : MonoBehaviour
    }
    public void UnFreezePlayer()
     {
-        speed = 9f;
+        speed = 10f;
     }
 
     public void PlayerTakeDamage(int dmg)
@@ -426,6 +428,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (other.gameObject.tag == "KillBox")
         {
             controller.enabled = false;
+            pauseScript.isPaused = true;
             loseUI.SetActive(true);
             virtualCursor.SetActive(true);
             Time.timeScale = 0f;
@@ -450,13 +453,13 @@ public class ThirdPersonMovement : MonoBehaviour
         if (scrappedBots >= fixedBots && scrapEndHasRun == false)
         {
             scrapEndHasRun = true;
-            
+            pauseScript.isPaused = true;
             WinScreen.Instance.ScrapEnding();
         }
         else if (scrappedBots < fixedBots && fixEndHasRun == false)
         {
             fixEndHasRun = true;
-
+            pauseScript.isPaused = true;
             WinScreen.Instance.FixEnding();
         }
     }

@@ -611,6 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 499062872}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - QUOTA HAS BEEN MET. GOOD JOB
   - NO SCRAP DETECTED. QUALITY OF WORK IS SUFFICIENT
@@ -6406,6 +6408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 740642251}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - Ah, it seems that gate's all broken
   - Looks like I'll need a key to fix it!
@@ -6588,7 +6592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1066264205}
-  virtualCursor: {fileID: 360449793}
   _hub: {fileID: 1427102710}
   _mainmenu: {fileID: 1115140947}
   _levelone: {fileID: 464446331}
@@ -17397,6 +17400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 581141814}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - Still don't have that key...
   textSpeed: 0.05
@@ -19783,7 +19788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to leave the level!
+  m_text: Press E (Y) to leave the level!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -25956,6 +25961,7 @@ MonoBehaviour:
   QuotaScrapBox: {fileID: 853954256}
   virtualCursor: {fileID: 360449793}
   pc: {fileID: 1745473790}
+  pauseScript: {fileID: 191828826}
   uiInput: 0
 --- !u!114 &694172151
 MonoBehaviour:
@@ -31641,6 +31647,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 165761568}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - QUOTA HAS BEEN MET. GOOD JOB
   - VALUABLE SCRAP DETECTED. CYBERTECH THANKS YOU FOR YOUR SERVICE
@@ -43686,11 +43694,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1218382549}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - '*BZZZZT*'
   - Greetings, [UNIT M-I-L-0]
   - We have updated your software to include [HOVER] function
-  - To activate [HOVER] functionality, hold the {SHIFT} key in your processors
+  - To activate [HOVER] functionality, hold {SHIFT} (X) in your processors
   - Do not forget to scrap the defective bots
   - You may not leave until you fulfill the area quota
   - Cybertech appreciates your contributions to the company
@@ -46271,7 +46281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to fix the gate!
+  m_text: Press E (Y) to fix the gate!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -48175,7 +48185,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340694824}
-  m_LocalRotation: {x: 0.13588779, y: -0.6885398, z: 0.13372236, w: 0.6996898}
+  m_LocalRotation: {x: 0.1358878, y: -0.68853986, z: 0.13372235, w: 0.69968975}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -52528,7 +52538,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455758665}
-  m_LocalRotation: {x: 0.1225201, y: -0.6909647, z: 0.12056768, w: 0.7021539}
+  m_LocalRotation: {x: 0.1225201, y: -0.69096476, z: 0.12056768, w: 0.70215386}
   m_LocalPosition: {x: -13.544707, y: 9.5528, z: -16.110088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -57714,6 +57724,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6288006179438952407, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 191828826}
     - target: {fileID: 6348235034129034963, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -57766,6 +57780,10 @@ PrefabInstance:
       propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 247c7a1470f50cd4c818fd975cb4a91d, type: 3}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 191828826}
     - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: miloAnimator
       value: 
@@ -75640,6 +75658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1777424137}
+  pauseScript: {fileID: 191828826}
+  pc: {fileID: 1745473790}
   lines:
   - ERROR. UNABLE TO LEAVE. PARAMETERS HAVE NOT BEEN MET.
   textSpeed: 0.05
@@ -77608,7 +77628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press E to fix, \npress Q to scrap."
+  m_text: "Press E (Y) to fix, \npress Q (B) to scrap."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}

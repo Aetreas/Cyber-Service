@@ -2622,7 +2622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to Interact
+  m_text: Press E (Y) to Interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -4229,7 +4229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to select level
+  m_text: Press E (Y) to select level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -6686,7 +6686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19855693, y: -0.0000000057453096, z: 0.0000000011639459, w: 0.98008937}
+  m_LocalRotation: {x: 0.19855693, y: -0.000000016453486, z: 0.000000003333322, w: 0.98008937}
   m_LocalPosition: {x: 0, y: 7.426734, z: 23.603699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7868,7 +7868,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151947658}
-  m_LocalRotation: {x: 0.16809332, y: 0.000000016961556, z: -0.0000000028922778, w: 0.9857711}
+  m_LocalRotation: {x: 0.16809332, y: -0.000000016961556, z: 0.0000000028922778, w: 0.9857711}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9705,7 +9705,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391180385}
-  m_LocalRotation: {x: 0.21721104, y: 0.000000016795573, z: -0.0000000037374157, w: 0.9761247}
+  m_LocalRotation: {x: 0.21721104, y: -0.000000016795573, z: 0.0000000037374157, w: 0.9761247}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10294,6 +10294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1089803115}
   virtualCursor: {fileID: 1209651403}
+  isPaused: 0
   _mainMenu: {fileID: 891303160}
   _quitGame: {fileID: 125212185}
 --- !u!114 &1453130221
@@ -10700,6 +10701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 878146100}
+  pauseScript: {fileID: 1453130220}
+  pc: {fileID: 1735233308}
   lines:
   - Great to see you're working hard!
   - Be sure to repair our fellow bots. We'll give you a hand on anything you need!
@@ -11634,6 +11637,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6550471869063356237, guid: f709ca77cd0946049ad23fe4c298c913, type: 3}
   m_PrefabInstance: {fileID: 734200047}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735233308 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4341433005138168267, guid: 127269747a28d10438ffd1a7e8fdd466, type: 3}
+  m_PrefabInstance: {fileID: 4399649781795910186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 779bff6104998f04cbf5806bfe4db277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1738695586
 GameObject:
   m_ObjectHideFlags: 0
@@ -13302,6 +13316,10 @@ PrefabInstance:
       propertyPath: hasDash
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4341433005138168267, guid: 127269747a28d10438ffd1a7e8fdd466, type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 1453130220}
     - target: {fileID: 4341433005138168267, guid: 127269747a28d10438ffd1a7e8fdd466, type: 3}
       propertyPath: virtualCursor
       value: 

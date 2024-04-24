@@ -10,6 +10,8 @@ public class WintutorialScreen : MonoBehaviour
     public GameObject InteractBox;
     public GameObject ErrorBox;
     public ThirdPersonMovement pc;
+    public GameObject virtualCursor;
+    public PauseMenu pauseScript;
     public bool uiInput = false;
 
 
@@ -71,6 +73,8 @@ public class WintutorialScreen : MonoBehaviour
     public void OpenMenu()
     {
         dialogBox.SetActive(true);
+        virtualCursor.SetActive(true);
+        pauseScript.isPaused = true;
         Cursor.lockState = CursorLockMode.None;
         ThirdPersonMovement.Instance.FreezePlayer();
     }

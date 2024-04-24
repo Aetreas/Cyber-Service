@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6288006179438952407, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 1678044303}
     - target: {fileID: 6348235034129034963, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -524,6 +528,10 @@ PrefabInstance:
       propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 247c7a1470f50cd4c818fd975cb4a91d, type: 3}
+    - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
+      propertyPath: pauseScript
+      value: 
+      objectReference: {fileID: 1678044303}
     - target: {fileID: 7089818587237055625, guid: efccc536380188f47a50e78a8f7b374a, type: 3}
       propertyPath: miloAnimator
       value: 
@@ -1365,7 +1373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press W A S D or the Arrow Keys to move!
+  m_text: Press W A S D or the Left Stick to move!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -1963,7 +1971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press E to fix, \npress Q to scrap."
+  m_text: "Press E (Y) to fix, \npress Q (B) to scrap."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -2428,6 +2436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 111208072}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - Ah, it seems that gate's all broken
   - Looks like I'll need a key to fix it!
@@ -3032,7 +3042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to leave the level!
+  m_text: Press E (Y) to leave the level!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -5222,6 +5232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 102965739}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - QUOTA HAS BEEN MET. GOOD JOB
   - NO SCRAP DETECTED. QUALITY OF WORK IS SUFFICIENT
@@ -5409,7 +5421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to fix the gate!
+  m_text: Press E (Y) to fix the gate!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -5681,7 +5693,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861054487}
-  m_LocalRotation: {x: -0.00056174275, y: 0.9845959, z: -0.17481595, w: -0.0031638392}
+  m_LocalRotation: {x: -0.0005617404, y: 0.9845959, z: -0.17481595, w: -0.0031638264}
   m_LocalPosition: {x: 25.036957, y: 6.756909, z: 3.6800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6555,12 +6567,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1190205733}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - Greetings, [UNIT M-I-L-0]
   - Welcome to your Pathing Tutorial
   - Here you will learn the basics of your code's simple programming
   - 'Follow our instructions carefully:'
-  - If you want to turn off our instructions, Press [E]
+  - If you want to turn off our instructions, Press [E] (Y)
   textSpeed: 0.05
 --- !u!114 &1056284993
 MonoBehaviour:
@@ -7643,6 +7657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1958090269}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - ERROR. MUST SCRAP ROBOT BEFORE CONTINUING...
   textSpeed: 0.05
@@ -8299,6 +8315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 519438680}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - QUOTA HAS BEEN MET. GOOD JOB
   - VALUABLE SCRAP DETECTED. CYBERTECH THANKS YOU FOR YOUR SERVICE
@@ -9036,6 +9054,8 @@ MonoBehaviour:
   InteractBox: {fileID: 501003279}
   ErrorBox: {fileID: 1213646510}
   pc: {fileID: 59434510}
+  virtualCursor: {fileID: 1661493323}
+  pauseScript: {fileID: 1678044303}
   uiInput: 0
 --- !u!1001 &1437876602
 PrefabInstance:
@@ -11463,7 +11483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There is an enemy in front of you! Attack it with LEFT CLICK
+  m_text: There is an enemy in front of you! Attack it with LEFT CLICK (RB)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
@@ -12951,6 +12971,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 197669807}
+  pauseScript: {fileID: 1678044303}
+  pc: {fileID: 59434510}
   lines:
   - ERROR. UNABLE TO LEAVE. PARAMETERS HAVE NOT BEEN MET.
   textSpeed: 0.05
@@ -13367,7 +13389,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095498750}
-  m_LocalRotation: {x: -0.0005426789, y: 0.98563087, z: -0.16888314, w: -0.0031671673}
+  m_LocalRotation: {x: -0.000542676, y: 0.98563087, z: -0.16888314, w: -0.0031671503}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
