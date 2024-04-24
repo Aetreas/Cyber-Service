@@ -445,13 +445,13 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if (scrappedBots >= fixedBots && scrapEndHasRun == false)
         {
-            WinScreen.Instance.ScrapEnding();
             scrapEndHasRun = true;
+            WinScreen.Instance.ScrapEnding();
         }
         else if (scrappedBots < fixedBots && fixEndHasRun == false)
         {
-            WinScreen.Instance.FixEnding();
             fixEndHasRun = true;
+            WinScreen.Instance.FixEnding();
         }
     }
 }
