@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject virtualCursor;
-    public bool isPaused;
+    public static bool isPaused;
 
     [SerializeField] Button _mainMenu;
     [SerializeField] Button _quitGame;

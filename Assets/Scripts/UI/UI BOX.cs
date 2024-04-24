@@ -7,6 +7,7 @@ public class UIBOX : MonoBehaviour
 {
     public GameObject dialogBox;
     public GameObject InteractBox;
+    public GameObject virtualCursor;
     public bool uiInput = false;
 
 
@@ -29,7 +30,7 @@ public class UIBOX : MonoBehaviour
         //   {
         //      uiInput = false;
         //  }
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (Input.GetButtonDown("Back"))
         {
             uiInput = false;
             Time.timeScale = 1;
@@ -68,12 +69,14 @@ public class UIBOX : MonoBehaviour
     public void OpenMenu()
     {
         dialogBox.SetActive(true);
+        virtualCursor.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void CloseMenu()
     {
         dialogBox.SetActive(false);
+        virtualCursor.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
 }

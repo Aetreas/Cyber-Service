@@ -11,6 +11,7 @@ public class WinScreen : MonoBehaviour
     public GameObject ErrorBox;
     public GameObject QuotaFixBox;
     public GameObject QuotaScrapBox;
+    public GameObject virtualCursor;
     public ThirdPersonMovement pc;
     public bool uiInput = false;
 
@@ -75,6 +76,7 @@ public class WinScreen : MonoBehaviour
     public void OpenMenu()
     {
         dialogBox.SetActive(true);
+        virtualCursor.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         ThirdPersonMovement.Instance.FreezePlayer();
     }

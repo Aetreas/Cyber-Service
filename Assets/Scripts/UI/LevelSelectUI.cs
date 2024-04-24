@@ -7,6 +7,7 @@ public class LevelSelectUI : MonoBehaviour
 {
     public GameObject dialogBox;
     public GameObject InteractBox;
+    public GameObject virtualCursor;
     public bool uiInput = false;
     
 
@@ -66,6 +67,7 @@ public class LevelSelectUI : MonoBehaviour
         public void OpenMenu()
     {
         dialogBox.SetActive(true);
+        virtualCursor.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         //ThirdPersonMovement.Instance.FreezePlayer();
         Time.timeScale = 0f;

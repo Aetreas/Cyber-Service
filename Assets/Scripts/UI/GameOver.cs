@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
+
     public GameObject gameOver;
+    //public GameObject virtualCursor;
 
     [SerializeField] Button _hub;
     [SerializeField] Button _mainmenu;
     [SerializeField] Button _levelone;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +49,9 @@ public class GameOver : MonoBehaviour
     public void GameOverMenu()
     {
         gameOver.SetActive(true);
+        //virtualCursor.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
     }
     private void LoadLevel1()
     {

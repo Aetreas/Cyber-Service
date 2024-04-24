@@ -12,6 +12,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Animator miloAnimator;
     public GameObject Melee;
     public GameObject loseUI;
+    public GameObject virtualCursor;
     //public GameObject player;
     public Vector3 direction;
     
@@ -209,8 +210,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (GameManager.gameManager.playerHP.Health <= 0)// death function
         {
+            //GameOver.Instance.GameOverMenu();
             controller.enabled = false;
             loseUI.SetActive(true);
+            virtualCursor.SetActive(true);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -424,6 +427,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             controller.enabled = false;
             loseUI.SetActive(true);
+            virtualCursor.SetActive(true);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
         }
@@ -446,11 +450,13 @@ public class ThirdPersonMovement : MonoBehaviour
         if (scrappedBots >= fixedBots && scrapEndHasRun == false)
         {
             scrapEndHasRun = true;
+            
             WinScreen.Instance.ScrapEnding();
         }
         else if (scrappedBots < fixedBots && fixEndHasRun == false)
         {
             fixEndHasRun = true;
+
             WinScreen.Instance.FixEnding();
         }
     }
