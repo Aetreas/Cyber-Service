@@ -25842,6 +25842,7 @@ GameObject:
   - component: {fileID: 694172147}
   - component: {fileID: 694172146}
   - component: {fileID: 694172150}
+  - component: {fileID: 694172151}
   m_Layer: 0
   m_Name: WinTrigger
   m_TagString: Untagged
@@ -25954,6 +25955,19 @@ MonoBehaviour:
   QuotaScrapBox: {fileID: 853954256}
   pc: {fileID: 1745473790}
   uiInput: 0
+--- !u!114 &694172151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694172144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97db786b8afcfa4783af24533a28aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1beat: 0
 --- !u!1 &697995373 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7ee17ca4ea8fa7d41ac4df487aae3d0e, type: 3}
@@ -47834,7 +47848,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311958815}
-  m_LocalRotation: {x: 0.1182892, y: -0.6916783, z: 0.116404206, w: 0.702879}
+  m_LocalRotation: {x: 0.11828921, y: -0.6916782, z: 0.1164042, w: 0.7028791}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48159,7 +48173,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340694824}
-  m_LocalRotation: {x: 0.13588779, y: -0.6885398, z: 0.13372236, w: 0.6996898}
+  m_LocalRotation: {x: 0.1358878, y: -0.68853986, z: 0.13372235, w: 0.69968975}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

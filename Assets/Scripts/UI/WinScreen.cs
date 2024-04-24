@@ -82,10 +82,12 @@ public class WinScreen : MonoBehaviour
     {
         QuotaFixBox.SetActive(true);
         CurrencySystem.instance.FixReward();
+        DialogueFlagSystem.instance.FixDialogue();
     }
     public void ScrapEnding()
     {
         QuotaScrapBox.SetActive(true);
         CurrencySystem.instance.ScrapReward();
+        DialogueFlagSystem.instance.ScrapDialogue();
     }
     }

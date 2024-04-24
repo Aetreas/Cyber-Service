@@ -6,6 +6,8 @@ using UnityEngine;
 public class NPC_UI : MonoBehaviour
 {
     public GameObject dialogBox;
+    public GameObject ScrapBox;
+    public GameObject FixBox;
     public GameObject InteractBox;
     public bool InInput = false;
 
@@ -70,7 +72,7 @@ public class NPC_UI : MonoBehaviour
     {
         dialogBox.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-    }
+    }   
 
     public void CloseMenu()
     {
