@@ -447,7 +447,7 @@ public class ThirdPersonMovement : MonoBehaviour
             LaunchPad.Instance.LaunchPadMove();
         }
     }
-    
+
     public void LevelEndTrigger()
     {
         if (scrappedBots >= fixedBots && scrapEndHasRun == false)
@@ -461,6 +461,17 @@ public class ThirdPersonMovement : MonoBehaviour
             fixEndHasRun = true;
             pauseScript.isPaused = true;
             WinScreen.Instance.FixEnding();
+        }
+    }
+    public void BossValueStatus()
+    {
+        if (scrappedBots >= fixedBots)
+        {
+            BossDialoguePuzzle.Instance.CheckForScrap();
+        }
+        else if (scrappedBots < fixedBots)
+        {
+            BossDialoguePuzzle.Instance.CheckForFix();
         }
     }
 }

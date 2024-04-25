@@ -10,7 +10,7 @@ public class BeatLevel3 : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && EnemyCounter.Instance.EnemyCount == 0)
         {
-            Level3beat = true;
+            DialogueFlagSystem.instance.PlayerPrefIntFunction();
         }
     }
 }

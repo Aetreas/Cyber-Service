@@ -202,6 +202,7 @@ public class BossEnemyController : MonoBehaviour
             FixScrapPrompt.GetComponent<BoxCollider>().enabled = false;
             ThirdPersonMovement.Instance.AddHonor();
             ThirdPersonMovement.Instance.AddTotalBots();
+            EnemyCounter.Instance.EnemiesLeft();
             FixScrapDialog.SetActive(false);
             GetComponent<Animator>().SetBool("Idle", false);
             GetComponent<Animator>().SetBool("FixedAnimation", true);
@@ -215,7 +216,7 @@ public class BossEnemyController : MonoBehaviour
         if (other.gameObject.tag == "Player" && scrapInteract == true && enemyDown == true && isFixed == false)
         {
             SoundEffectScripts.instance.PlaySoundClip(destroysoundclip, transform, 1f);
-
+            EnemyCounter.Instance.EnemiesLeft();
             scrapInteract = false;
             Destroy(enemyObj);
             FixScrapDialog.SetActive(false);

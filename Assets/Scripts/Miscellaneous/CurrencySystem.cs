@@ -113,4 +113,9 @@ public class CurrencySystem : MonoBehaviour
         coins += 2000;
         UpdateCoins();
     }
+    public void SecretReward()
+    {
+        coins += 5000;
+        UpdateCoins();
+    }
 }

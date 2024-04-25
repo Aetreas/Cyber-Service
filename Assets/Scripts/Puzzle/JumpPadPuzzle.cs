@@ -66,9 +66,10 @@ public class JumpPadPuzzle : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact"))
         {
-         if (fixInput == true)
+         if (fixInput == true && EnemyCounter.Instance.EnemyCount == 3)
             {
-               OpenGate();
+                ThirdPersonMovement.Instance.BossValueStatus();
+                OpenGate();
                 FixDialogueBox.SetActive(false);
                 DestroyGate();
             }
