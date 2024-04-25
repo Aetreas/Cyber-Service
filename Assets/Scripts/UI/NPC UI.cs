@@ -10,6 +10,7 @@ public class NPC_UI : MonoBehaviour
     public GameObject FixBox;
     public GameObject InteractBox;
     public bool InInput = false;
+    public int verification;
 
 
 
@@ -17,6 +18,7 @@ public class NPC_UI : MonoBehaviour
     void Start()
     {
         dialogBox.SetActive(false);
+        verification = PlayerPrefs.GetInt("score");
     }
 
     // Update is called once per frame
@@ -46,6 +48,8 @@ public class NPC_UI : MonoBehaviour
     {
         InteractBox.SetActive(false);
         dialogBox.SetActive(false);
+        ScrapBox.SetActive(false);
+        FixBox.SetActive(false);
         InInput = false;
     }
     private void OnTriggerStay(Collider other)
@@ -70,9 +74,20 @@ public class NPC_UI : MonoBehaviour
 
     public void OpenMenu()
     {
-        dialogBox.SetActive(true);
+        if (verification == 0)
+        {
+            dialogBox.SetActive(true);
+        }
+        else if (verification == 1)
+        {
+            ScrapBox.SetActive(true);
+        }
+        else if (verification == 2)
+        {
+            FixBox.SetActive(true);
+        }
         Cursor.lockState = CursorLockMode.None;
-    }   
+    }
 
     public void CloseMenu()
     {

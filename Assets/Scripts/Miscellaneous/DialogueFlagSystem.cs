@@ -6,19 +6,26 @@ using UnityEngine.UI;
 public class DialogueFlagSystem : MonoBehaviour
 {
     public static DialogueFlagSystem instance;
-    public bool didScrap;
-    public bool didfix;
+    public int didtheyScraporFix;
 
+    private void Start()
+    {
+        didtheyScraporFix = 0;
+    }
     private void Awake()
     {
         instance = this;
     }
     public void ScrapDialogue()
     {
-        didScrap = true;
+        didtheyScraporFix = 1;
     }
     public void FixDialogue()
     {
-        didfix = true;
+        didtheyScraporFix = 2;
+    }   
+    public void PlayerPrefIntFunction()
+    {
+        PlayerPrefs.SetInt("score", didtheyScraporFix);
     }
 }
