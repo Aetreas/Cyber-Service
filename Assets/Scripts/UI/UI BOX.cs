@@ -44,6 +44,7 @@ public class UIBOX : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         InteractBox.SetActive(false);
+        dialogBox.SetActive(false);
         uiInput = false;
     }
     private void OnTriggerStay(Collider other)

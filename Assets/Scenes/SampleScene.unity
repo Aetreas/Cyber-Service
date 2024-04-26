@@ -5302,7 +5302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.81784, y: 1.1999817}
+  m_AnchoredPosition: {x: -17.81784, y: 4.0631394}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635575757
@@ -5325,7 +5325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Poster2
+  m_text: Hang In There Poster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 144b978c80895e547afceeb49b27bb17, type: 2}
   m_sharedMaterial: {fileID: 8703850163029554548, guid: 144b978c80895e547afceeb49b27bb17, type: 2}
@@ -12370,7 +12370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.81784, y: 1.1999817}
+  m_AnchoredPosition: {x: -17.81784, y: 4.2720304}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1770573353
@@ -12393,7 +12393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Poster1
+  m_text: Lemonade Poster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 144b978c80895e547afceeb49b27bb17, type: 2}
   m_sharedMaterial: {fileID: 8703850163029554548, guid: 144b978c80895e547afceeb49b27bb17, type: 2}
