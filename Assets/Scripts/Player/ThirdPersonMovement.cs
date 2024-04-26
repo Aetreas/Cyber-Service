@@ -243,7 +243,7 @@ public class ThirdPersonMovement : MonoBehaviour
    }
    public void UnFreezePlayer()
     {
-        speed = 10f;
+        speed = 15f;
     }
 
     public void PlayerTakeDamage(int dmg)
@@ -377,7 +377,7 @@ public class ThirdPersonMovement : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         isAttacking = false;
         miloAnimator.SetBool("isAttacking", false);
-        speed = 10f;
+        speed = 15f;
     }
 
     IEnumerator HonorDelay()
