@@ -4628,6 +4628,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2037931489294579841, guid: f709ca77cd0946049ad23fe4c298c913, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5596127301533733858, guid: f709ca77cd0946049ad23fe4c298c913, type: 3}
       propertyPath: m_Name
       value: Hub
@@ -5859,7 +5863,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706412290}
-  m_LocalRotation: {x: -0.00047052224, y: 0.98936427, z: -0.14542311, w: -0.003201127}
+  m_LocalRotation: {x: -0.00047051665, y: 0.98936427, z: -0.14542311, w: -0.003201089}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
