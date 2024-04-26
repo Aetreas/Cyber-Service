@@ -1003,8 +1003,9 @@ MonoBehaviour:
     move\t\t\t\t\t\t\tLeft Analog Stick to move\n\t  Space Bar to Jump  \t\t\t\t\t\t\t\t\t  
     A to Jump \n\t   Left Click to Attack\t\t\t\t\t\t                          RB
     to Attack\n\t       E to interact\t\t\t\t\t\t\t\t\tY to Interact\n\t\tQ to Scrap\t\t\t\t\t\t\t\t\t\t
-    B to Scrap\n       Hold Shift to Use Hover (Level 1)\t\t\t\t\t\tHold X to use
-    Hover (Level 1)"
+    B to Scrap\n    Hold Shift to Use Hover (Level 1)\t\t\t\t\t\tHold X to use Hover
+    (Level 1)\n    Press Shift To Use Dash (Level 2)\t\t\t\t\t\tPress X to Use Dash
+    (Level 2)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}
   m_sharedMaterial: {fileID: -7492806850095055195, guid: c0f5fb7dfb09f884f8e8eabdbe920ff7, type: 2}

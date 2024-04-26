@@ -6,6 +6,7 @@ public class SwitchItem5 : MonoBehaviour
 {
     public GameObject FixDialogueBox;
     public bool interact;
+    [SerializeField] private AudioClip interactSound;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class SwitchItem5 : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact"))
         {
+            SoundEffectScripts.instance.PlaySoundClip(interactSound, transform, 1f);
             SwitchPuzzle2.instance.ActivatedSwitch5();
             FixDialogueBox.SetActive(false);
             interact = true;

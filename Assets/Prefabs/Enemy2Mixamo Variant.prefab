@@ -290,6 +290,7 @@ MonoBehaviour:
   FixScrapPrompt: {fileID: 3936706967941365455}
   FixScrapDialog: {fileID: 0}
   hostileMesh: {fileID: 0}
+  fixedMesh: {fileID: 0}
   fixInteract: 0
   scrapInteract: 0
   enemyDown: 0
@@ -325,10 +326,13 @@ MonoBehaviour:
   meshResolution: 1
   edgeIterations: 4
   edgeDistance: 0.5
+  rotationSpeed: 0
   waypoints: []
+  playerPos: {fileID: 0}
   damagesoundclip: {fileID: 0}
   fixsoundclip: {fileID: 0}
   destroysoundclip: {fileID: 0}
+  playerDamage: {fileID: 8300000, guid: 336ac9d208581ec488b8886d8669a6b6, type: 3}
 --- !u!65 &-6890375199955516053
 BoxCollider:
   m_ObjectHideFlags: 0

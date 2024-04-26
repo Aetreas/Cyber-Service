@@ -388,6 +388,7 @@ MonoBehaviour:
   damagesoundclip: {fileID: 0}
   fixsoundclip: {fileID: 0}
   destroysoundclip: {fileID: 0}
+  playerDamage: {fileID: 8300000, guid: 336ac9d208581ec488b8886d8669a6b6, type: 3}
 --- !u!95 &6395657140519690383
 Animator:
   serializedVersion: 5

@@ -69,6 +69,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private AudioClip damagesoundclip;
     [SerializeField] private AudioClip fixsoundclip;
     [SerializeField] private AudioClip destroysoundclip;
+    [SerializeField] private AudioClip playerDamage;
 
 
     private void Awake()
@@ -260,6 +261,7 @@ public class EnemyController : MonoBehaviour
         if(EnemyIsAttacking)
         {
             yield return new WaitForSeconds(0.5f);
+            SoundEffectScripts.instance.PlaySoundClip(playerDamage, transform, 1f);
             pc.PlayerTakeDamage(7);
             Debug.Log(GameManager.gameManager.playerHP.Health);
         }

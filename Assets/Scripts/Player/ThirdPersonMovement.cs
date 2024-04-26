@@ -14,6 +14,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameObject Melee;
     public GameObject loseUI;
     public GameObject virtualCursor;
+    public GameObject hoverVFX;
     //public GameObject player;
     public Vector3 direction;
     
@@ -57,6 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private AudioClip hoverSound;
+    [SerializeField] private AudioClip dashSound;
 
     //test code for HP
    // public int maxHP = 100;
@@ -146,6 +148,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if(Input.GetButtonUp("Ability") && isHovering == true)
         {
             ySpeed = -0.5f;
+            hoverVFX.SetActive(false);
             isHovering = false;
             Physics.gravity = new Vector3(0, -19, 0);
         }
@@ -273,12 +276,14 @@ public class ThirdPersonMovement : MonoBehaviour
         SoundEffectScripts.instance.PlaySoundClip(hoverSound, transform, 1f);
         ySpeed = 0.5f;
         isHovering = true;
+        hoverVFX.SetActive(true);
         Physics.gravity = new Vector3(0, 0, 0);
         
 
         yield return new WaitForSeconds (3f);
 
         ySpeed = -0.5f;
+        hoverVFX.SetActive(false);
         isHovering = false;
         Physics.gravity = new Vector3(0, -19, 0);
     }
@@ -296,6 +301,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     IEnumerator Dash(Vector3 direction)
     {
+        SoundEffectScripts.instance.PlaySoundClip(dashSound, transform, 1f);
         canDash = false;
         float startTime = Time.time;
 

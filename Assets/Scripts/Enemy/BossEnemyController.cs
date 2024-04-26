@@ -47,8 +47,10 @@ public class BossEnemyController : MonoBehaviour
     public float meshResolution = 1f;
     public int edgeIterations = 4;
     public float edgeDistance = 0.5f;
+    public float rotationSpeed;
 
     public Transform[] waypoints;
+    public Transform playerPos;
     int m_CurrentWaypointIndex;
 
     Vector3 playerLastPosition = Vector3.zero;
@@ -65,6 +67,7 @@ public class BossEnemyController : MonoBehaviour
     [SerializeField] private AudioClip damagesoundclip;
     [SerializeField] private AudioClip fixsoundclip;
     [SerializeField] private AudioClip destroysoundclip;
+    [SerializeField] private AudioClip playerDamage;
 
 
     private void Awake()
@@ -98,6 +101,7 @@ public class BossEnemyController : MonoBehaviour
 
         //FOV attack detection
         playerRef = GameObject.FindGameObjectWithTag("Player");
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(AttackFOVRoutine());
     }
 
@@ -157,6 +161,9 @@ public class BossEnemyController : MonoBehaviour
 
         if (attackRange == true)
         {
+            var targetRotation = Quaternion.LookRotation(playerPos.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            
             if(EnemyCanAttack == true)
             {
                 speedWalk = 0;
@@ -247,6 +254,7 @@ public class BossEnemyController : MonoBehaviour
         if(EnemyIsAttacking)
         {
             yield return new WaitForSeconds(0.5f);
+            SoundEffectScripts.instance.PlaySoundClip(playerDamage, transform, 1f);
             pc.PlayerTakeDamage(11);
             //Debug.Log(GameManager.gameManager.playerHP.Health);
         }
