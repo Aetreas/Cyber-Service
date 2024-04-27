@@ -300,7 +300,7 @@ MonoBehaviour:
   EnemyAttackCooldown: 3
   maxHealth: 150
   currentHealth: 0
-  radius: 7
+  radius: 6.84
   angle: 319
   playerRef: {fileID: 0}
   targetMask:
