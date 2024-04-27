@@ -152,7 +152,7 @@ public class BossEnemyController : MonoBehaviour
 
         if (!m_IsPatrol)
         {
-            Chasing();
+            //Chasing();
         }
         else
         {
@@ -300,37 +300,37 @@ public class BossEnemyController : MonoBehaviour
 
     //Jan's tutorial methods
 
-    private void Chasing()
-    {
-        m_PlayerNear = false;
-        playerLastPosition = Vector3.zero;
+    //private void Chasing()
+    //{
+        //m_PlayerNear = false;
+        //playerLastPosition = Vector3.zero;
 
-        if (!m_CaughtPlayer)
-        {
-            Move(speedRun);
-            navMeshAgent.SetDestination(m_PlayerPosition);
-        }
-        if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
-        {
-            if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
-            {
-                m_IsPatrol = true;
-                m_PlayerNear = false;
-                Move(speedWalk);
-                m_TimeToRotate = timeToRotate;
-                m_WaitTime = startWaitTime;
-                navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-            }
-            else
-            {
-                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
-                {
-                    Stop();
-                    m_WaitTime -= Time.deltaTime;
-                }
-            }
-        }
-    }
+        //if (!m_CaughtPlayer)
+        //{
+            //Move(speedRun);
+            //navMeshAgent.SetDestination(m_PlayerPosition);
+        //}
+        //if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
+        //{
+            //if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
+            //{
+                //m_IsPatrol = true;
+                //m_PlayerNear = false;
+                //Move(speedWalk);
+                //m_TimeToRotate = timeToRotate;
+                //m_WaitTime = startWaitTime;
+                //navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+            //}
+            //else
+            //{
+                //if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
+                //{
+                    //Stop();
+                    //m_WaitTime -= Time.deltaTime;
+                //}
+            //}
+        //}
+    //}
     private void Patrolling()
     {
         if (m_PlayerNear)
