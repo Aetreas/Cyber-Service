@@ -39,6 +39,8 @@ public class DialogueScript : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        pc.controller.enabled = false;
+        pauseScript.isPaused = true;
         StartCoroutine(TypeLine());
 
     }

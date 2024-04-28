@@ -44,7 +44,7 @@ public class SecretCode : MonoBehaviour
     private void SecretInteract()
     {
         SecretCodeBox.SetActive(true);
-        ThirdPersonMovement.Instance.FreezePlayer();
+        //ThirdPersonMovement.Instance.FreezePlayer();
         CurrencySystem.instance.SecretReward();
     }
 }
